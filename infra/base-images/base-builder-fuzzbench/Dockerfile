@@ -14,7 +14,8 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+ARG IMG_TAG=latest
+FROM ghcr.io/aixcc-finals/base-builder:${IMG_TAG}
 
 # Copy/Run this now to make the cache more resilient.
 COPY fuzzbench_install_dependencies /usr/local/bin

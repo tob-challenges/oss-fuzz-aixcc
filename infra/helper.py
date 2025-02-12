@@ -37,23 +37,23 @@ import templates
 OSS_FUZZ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 BUILD_DIR = os.path.join(OSS_FUZZ_DIR, 'build')
 
-BASE_RUNNER_IMAGE = 'gcr.io/oss-fuzz-base/base-runner'
+BASE_RUNNER_IMAGE = 'ghcr.io/aixcc-finals/base-runner'
 
 BASE_IMAGES = {
     'generic': [
-        'gcr.io/oss-fuzz-base/base-image',
-        'gcr.io/oss-fuzz-base/base-clang',
-        'gcr.io/oss-fuzz-base/base-builder',
+        'ghcr.io/aixcc-finals/base-image',
+        'ghcr.io/aixcc-finals/base-clang',
+        'ghcr.io/aixcc-finals/base-builder',
         BASE_RUNNER_IMAGE,
-        'gcr.io/oss-fuzz-base/base-runner-debug',
+        'ghcr.io/aixcc-finals/base-runner-debug',
     ],
-    'go': ['gcr.io/oss-fuzz-base/base-builder-go'],
-    'javascript': ['gcr.io/oss-fuzz-base/base-builder-javascript'],
-    'jvm': ['gcr.io/oss-fuzz-base/base-builder-jvm'],
-    'python': ['gcr.io/oss-fuzz-base/base-builder-python'],
-    'rust': ['gcr.io/oss-fuzz-base/base-builder-rust'],
-    'ruby': ['gcr.io/oss-fuzz-base/base-builder-ruby'],
-    'swift': ['gcr.io/oss-fuzz-base/base-builder-swift'],
+    'go': ['ghcr.io/aixcc-finals/base-builder-go'],
+    'javascript': ['ghcr.io/aixcc-finals/base-builder-javascript'],
+    'jvm': ['ghcr.io/aixcc-finals/base-builder-jvm'],
+    'python': ['ghcr.io/aixcc-finals/base-builder-python'],
+    'rust': ['ghcr.io/aixcc-finals/base-builder-rust'],
+    'ruby': ['ghcr.io/aixcc-finals/base-builder-ruby'],
+    'swift': ['ghcr.io/aixcc-finals/base-builder-swift'],
 }
 
 VALID_PROJECT_NAME_REGEX = re.compile(r'^[a-zA-Z0-9_-]+$')
@@ -94,7 +94,7 @@ ARM_BUILDER_NAME = 'oss-fuzz-buildx-builder'
 CLUSTERFUZZLITE_ENGINE = 'libfuzzer'
 CLUSTERFUZZLITE_ARCHITECTURE = 'x86_64'
 CLUSTERFUZZLITE_FILESTORE_DIR = 'filestore'
-CLUSTERFUZZLITE_DOCKER_IMAGE = 'gcr.io/oss-fuzz-base/cifuzz-run-fuzzers'
+CLUSTERFUZZLITE_DOCKER_IMAGE = 'ghcr.io/aixcc-finals/cifuzz-run-fuzzers'
 
 logger = logging.getLogger(__name__)
 
@@ -641,22 +641,23 @@ def build_image_impl(project, cache=True, pull=False, architecture='x86_64'):
   image_name = project.name
 
   if is_base_image(image_name):
-    image_project = 'oss-fuzz-base'
+    image_project = 'aixcc-finals'
     docker_build_dir = os.path.join(OSS_FUZZ_DIR, 'infra', 'base-images',
                                     image_name)
     dockerfile_path = os.path.join(docker_build_dir, 'Dockerfile')
+    image_name = 'ghcr.io/%s/%s' % (image_project, image_name)
   else:
     if not check_project_exists(project):
       return False
     dockerfile_path = project.dockerfile_path
     docker_build_dir = project.path
     image_project = 'oss-fuzz'
+    image_name = 'gcr.io/%s/%s' % (image_project, image_name)
 
   if pull and not pull_images(project.language):
     return False
 
   build_args = []
-  image_name = 'gcr.io/%s/%s' % (image_project, image_name)
   if architecture == 'aarch64':
     build_args += [
         'buildx',
@@ -904,7 +905,7 @@ def run_clusterfuzzlite(args):
         shutil.copytree(args.project.path, project_src_path)
 
       build_command = [
-          '--tag', 'gcr.io/oss-fuzz-base/cifuzz-run-fuzzers', '--file',
+          '--tag', 'ghcr.io/aixcc-finals/cifuzz-run-fuzzers', '--file',
           'infra/run_fuzzers.Dockerfile', 'infra'
       ]
       if not docker_build(build_command):
@@ -1000,8 +1001,8 @@ def fuzzbench_build_fuzzers(args):
     ]
     tag = f'gcr.io/oss-fuzz/{args.project.name}'
     subprocess.run([
-        'docker', 'tag', 'gcr.io/oss-fuzz-base/base-builder-fuzzbench',
-        'gcr.io/oss-fuzz-base/base-builder'
+        'docker', 'tag', 'ghcr.io/aixcc-finals/base-builder-fuzzbench',
+        'ghcr.io/aixcc-finals/base-builder'
     ],
                    check=True)
     build_image_impl(args.project)
@@ -1572,7 +1573,7 @@ def reproduce_impl(  # pylint: disable=too-many-arguments
       '-v',
       '%s:/testcase' % _get_absolute_path(testcase_path),
       '-t',
-      'gcr.io/oss-fuzz-base/%s' % image_name,
+      'ghcr.io/aixcc-finals/%s' % image_name,
       'reproduce',
       fuzzer_name,
       '-runs=100',
@@ -1694,10 +1695,12 @@ def shell(args):
     env += args.e
 
   if is_base_image(args.project.name):
-    image_project = 'oss-fuzz-base'
+    image_project = 'aixcc-finals'
+    image_addr = 'ghcr.io/%s/%s' % (image_project, args.project.name)
     out_dir = _get_out_dir()
   else:
     image_project = 'oss-fuzz'
+    image_addr = 'gcr.io/%s/%s' % (image_project, args.project.name)
     out_dir = args.project.out
 
   run_args = _env_to_docker_args(env)
@@ -1712,7 +1715,7 @@ def shell(args):
       '-v',
       '%s:/out' % out_dir, '-v',
       '%s:/work' % args.project.work, '-t',
-      'gcr.io/%s/%s' % (image_project, args.project.name), '/bin/bash'
+      '%s' % image_addr, '/bin/bash'
   ])
 
   docker_run(run_args, architecture=args.architecture)
