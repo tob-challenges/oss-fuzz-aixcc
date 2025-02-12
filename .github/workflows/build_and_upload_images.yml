@@ -39,7 +39,8 @@ jobs:
     - name: Build and upload based on release cache, update cache
       if: github.event_name == 'push'
       run: |
-        infra/base-images/aixcc_build_all.sh --cache-to "${{ github.ref }}" "${{ github.sha }}"
+        BRANCH_NAME="${{ github.ref }}"
+        infra/base-images/aixcc_build_all.sh --cache-to "${BRANCH_NAME#refs/heads/}" "${{ github.sha }}"
 
     - name: Build and upload based on release cache, no cache update
       if: github.event_name == 'pull_request'
