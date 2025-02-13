@@ -28,7 +28,7 @@ PROJECTS_DIR = os.path.join(ROOT_DIR, 'projects')
 
 IMAGE_DIGEST_REGEX = re.compile(r'\[(.+)\]\n')
 FROM_LINE_REGEX = re.compile(
-    r'FROM (gcr.io\/oss-fuzz-base\/base-builder[\-a-z0-9]*)(\@?.*)')
+    r'FROM (ghcr.io\/aixcc-finals\/base-builder[\-a-z0-9]*)(\@?.*)')
 
 
 def get_latest_docker_image_digest(image):
@@ -93,7 +93,7 @@ def hold_image(project, hold_image_digest, update_held, issue_number):
   with open(dockerfile_path, 'r') as dockerfile_handle:
     dockerfile = dockerfile_handle.readlines()
   for idx, line in enumerate(dockerfile[:]):
-    if not line.startswith('FROM gcr.io/oss-fuzz-base/base-builder'):
+    if not line.startswith('FROM ghcr.io/aixcc-finals/base-builder'):
       continue
 
     hold_image_digest, should_hold = get_hold_image_digest(
