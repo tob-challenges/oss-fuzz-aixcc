@@ -37,7 +37,7 @@ import templates
 OSS_FUZZ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 BUILD_DIR = os.path.join(OSS_FUZZ_DIR, 'build')
 
-BASE_IMAGE_TAG = 'v1.0.0' # no tag for latest
+BASE_IMAGE_TAG = 'v1.0.0-rc1' # no tag for latest
 
 BASE_RUNNER_IMAGE = f'ghcr.io/aixcc-finals/base-runner{BASE_IMAGE_TAG}'
 
