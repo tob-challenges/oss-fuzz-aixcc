@@ -1,3 +1,35 @@
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz
+
+This is a competition fork of oss-fuzz which is guaranteed to be
+compatible with the AFC challenges. This fork is designed to remain
+fully backwards compatible with the public/upstream oss-fuzz, and
+thus competition challenges will reflect realistic real-world repositories.
+
+***Other than base-image changes, the projects files have not been touched
+in this repository. The list of projects in the projects directory does
+not reflect which projects will be used in any AFC round.***
+
+Competitors are recommended to test their CRS against public repositories
+using this compeition fork. Competitors are recommended to use the following
+commands to build and run harnesses.
+
+```bash
+# Build the project image and pull AFC base images
+infra/helper.py build_image --pull <project_name>
+
+# Build the fuzzer harnesses for the project, using local source
+infra/helper.py build_fuzzers --clean --sanitizer <sanitizer> --engine <engine> <project_name> <path-to-local-src>
+
+# Check all fuzzer harnesses for build
+infra/helper.py check_build --sanitizer <sanitizer> --engine <engine> <project_name>
+
+# Reproduce the testcase
+# optionally use --propagate_exit_codes
+infra/helper.py reproduce <project_name> <harness_name> <path-to-data-blob>
+```
+
+---
+
 # OSS-Fuzz: Continuous Fuzzing for Open Source Software
 
 [Fuzz testing] is a well-known technique for uncovering programming errors in
