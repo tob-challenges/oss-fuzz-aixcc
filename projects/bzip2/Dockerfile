@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN git clone git://sourceware.org/git/bzip2.git
 RUN git clone git://sourceware.org/git/bzip2-tests.git
 COPY build.sh *.c $SRC/

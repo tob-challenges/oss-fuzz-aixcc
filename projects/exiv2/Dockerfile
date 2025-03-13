@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 RUN git clone https://github.com/Exiv2/exiv2 exiv2
 RUN ./exiv2/ci/install_dependencies.sh

@@ -16,7 +16,7 @@
 
 # Held back because of github.com/google/oss-fuzz/pull/12027
 # Please fix failure and upgrade if possible.
-FROM gcr.io/oss-fuzz-base/base-builder-python@sha256:d8fe5e2a6a96723f393de413c48d9455a5124995b2349a2e4d6b9abecf99d6d5
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN git clone https://github.com/pycrypto/pycrypto
 COPY build.sh *.py $SRC/
 WORKDIR pycrypto

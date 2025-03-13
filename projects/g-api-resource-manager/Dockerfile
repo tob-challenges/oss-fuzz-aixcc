@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN apt-get update && \
     apt-get install -y libre2-dev zlib1g-dev libssl-dev
 RUN python3 -m pip install --upgrade pip && \

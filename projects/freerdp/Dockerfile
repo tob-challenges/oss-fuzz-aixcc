@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 # See https://github.com/FreeRDP/FreeRDP/wiki/Compilation
 # Install Git and base dependences.

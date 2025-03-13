@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN git clone --depth 1 http://github.com/mattn/go-sqlite3 $GOPATH/src/github.com/mattn/go-sqlite3
 
 COPY build.sh $SRC/

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y libpcre3-dev zlib1g-dev cmake libssl-dev libpcre2-dev pkg-config
 RUN git clone --depth 1 https://github.com/apache/trafficserver.git
 RUN cp $SRC/trafficserver/tests/fuzzing/oss-fuzz.sh $SRC/build.sh

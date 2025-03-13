@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 
 # Clone the actual repo with the fuzz target.
 RUN git clone --depth 1 https://github.com/GoogleCloudPlatform/config-validator $GOPATH/src/github.com/GoogleCloudPlatform/config-validator

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 RUN apt-get update && apt-get install -y git autoconf automake libtool make \
    libreadline-dev texinfo libjson-c-dev pkg-config bison flex python3-pip \

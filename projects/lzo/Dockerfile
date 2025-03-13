@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake libtool wget
 RUN wget -O lzo.tar.gz \
     http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz

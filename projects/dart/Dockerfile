@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt install -y g++-multilib git python curl
 
 RUN git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git

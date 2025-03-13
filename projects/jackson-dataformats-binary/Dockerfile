@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-jvm
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
 RUN apt-get update && apt-get install -y maven
 
 RUN git clone --depth 1 https://github.com/FasterXML/jackson-dataformats-binary

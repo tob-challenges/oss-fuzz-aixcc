@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN git clone --depth 1 https://github.com/ProtonMail/proton-bridge.git
 RUN git clone --depth=1 https://github.com/AdamKorcz/go-118-fuzz-build --branch=include-all-test-files
 COPY build.sh $SRC/

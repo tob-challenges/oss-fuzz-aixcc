@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 ADD https://zydis.re/fuzzing-corpora/ZydisFuzzDecoder_seed_corpus.zip \
     $SRC/ZydisFuzzDecoder_seed_corpus.zip

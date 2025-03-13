@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y libpcre2-dev libssl-dev libsystemd-dev autoconf libtool
 RUN git clone https://github.com/wazuh/wazuh
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN pip3 install --upgrade pip && pip3 install mock
 RUN git clone https://github.com/googleapis/python-storage
 COPY build.sh fuzz_fileio.py $SRC/

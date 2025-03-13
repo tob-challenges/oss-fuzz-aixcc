@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 https://github.com/BurntSushi/toml toml
 COPY build.sh $SRC/

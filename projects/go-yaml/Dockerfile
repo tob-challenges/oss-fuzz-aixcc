@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN git clone --depth 1 https://github.com/go-yaml/yaml
 WORKDIR yaml
 COPY build.sh fuzz_test.go $SRC/

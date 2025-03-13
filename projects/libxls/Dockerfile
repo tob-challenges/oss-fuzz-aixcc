@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf autoconf-archive automake gettext libtool
 
 RUN git clone --depth 1 https://github.com/libxls/libxls libxls

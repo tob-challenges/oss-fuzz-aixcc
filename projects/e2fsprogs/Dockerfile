@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages git make texinfo
 RUN git clone --depth 1 https://github.com/tytso/e2fsprogs
 

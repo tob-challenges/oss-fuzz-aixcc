@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake libtool g++ postgresql-server-dev-12 libgeos-dev libproj-dev libxml2-dev pkg-config libjson-c-dev
 RUN git clone --depth 1 https://git.osgeo.org/gitea/postgis/postgis.git postgis
 WORKDIR postgis

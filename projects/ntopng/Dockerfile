@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake libtool ninja-build \
     liblzma-dev libzstd-dev pkg-config libglib2.0-dev groff libxml2-dev \
     libcurl4-openssl-dev libsqlite3-dev flex bison

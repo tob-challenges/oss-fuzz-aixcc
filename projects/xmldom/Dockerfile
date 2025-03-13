@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-javascript
+FROM ghcr.io/aixcc-finals/base-builder-javascript:v1.0.0-rc3
 RUN git clone --depth 1 --no-tags https://github.com/xmldom/xmldom.git xmldom     # or use other version control
 WORKDIR xmldom
 COPY build.sh $SRC/

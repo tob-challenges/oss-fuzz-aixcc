@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 # Install the packages needed for building the project
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 

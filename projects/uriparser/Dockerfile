@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake wget sudo libtool cmake
 RUN git clone --depth 1 https://github.com/uriparser/uriparser uriparser
 WORKDIR uriparser

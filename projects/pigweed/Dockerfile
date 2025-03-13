@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y git build-essential python python3
 RUN git clone 'https://pigweed.googlesource.com/pigweed/pigweed'  --depth 1
 

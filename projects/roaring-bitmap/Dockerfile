@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM gcr.io/oss-fuzz-base/base-builder-jvm
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
 RUN git clone --depth 1 https://github.com/RoaringBitmap/RoaringBitmap RoaringBitmap
 COPY *.sh *.java $SRC/
 WORKDIR $SRC/RoaringBitmap

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && \
     apt-get install -y ffmpeg libstdc++-9-dev libstdc++-9-dev:i386 nasm subversion
 RUN git clone --depth 1 https://github.com/cisco/openh264.git openh264

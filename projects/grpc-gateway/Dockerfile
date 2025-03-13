@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 ENV GO111MODULE on
 RUN git clone https://github.com/grpc-ecosystem/grpc-gateway
 COPY build.sh $SRC/

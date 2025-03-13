@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 
 RUN git clone --depth 1 --branch master \
         https://github.com/martinblech/xmltodict.git

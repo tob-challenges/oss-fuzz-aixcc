@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-jvm
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
 
 # Install Java 17 using Azul Zulu distribution, because
 #

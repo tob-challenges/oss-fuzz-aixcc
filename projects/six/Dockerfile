@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN pip3 install --upgrade pip HTMLParser
 RUN git clone https://github.com/benjaminp/six six
 COPY *.sh *py $SRC/

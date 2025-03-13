@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y openssl libssl-dev git make cmake libssl-dev 
 RUN git clone --depth 1 https://github.com/pocoproject/poco
 RUN cp $SRC/poco/build/script/oss-fuzz-build.sh $SRC/build.sh

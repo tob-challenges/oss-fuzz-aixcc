@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN pip3 install dictgen numpy
 RUN git clone --depth 1 https://github.com/uiri/toml toml
 COPY build.sh fuzz_*.py $SRC/

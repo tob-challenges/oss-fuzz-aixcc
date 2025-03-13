@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get install -y build-essential libncurses5-dev gnutls-dev bison zlib1g-dev ccache
 RUN git clone --depth=1 https://github.com/MariaDB/server
 WORKDIR server

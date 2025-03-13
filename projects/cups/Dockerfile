@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y zlib1g-dev libavahi-client-dev libsystemd-dev
 RUN git clone --depth 1 https://github.com/OpenPrinting/cups
 RUN git clone --depth 1 https://github.com/OpenPrinting/fuzzing.git

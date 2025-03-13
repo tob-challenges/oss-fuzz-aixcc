@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y scons python3-distutils
 RUN git clone --depth 1 https://gitlab.com/gpsd/gpsd
 RUN git clone https://github.com/pkillarjun/oss-fuzz-bloat

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN git clone --depth 1 https://github.com/etcd-io/etcd
 RUN git clone --depth 1 https://github.com/etcd-io/raft
 RUN git clone --depth 1 https://github.com/cncf/cncf-fuzzing

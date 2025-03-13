@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN echo "CXX=$CXX"
 RUN echo "CXXFLAGS=$CXXFLAGS"
 RUN apt-get update && apt-get install -y cmake ninja-build

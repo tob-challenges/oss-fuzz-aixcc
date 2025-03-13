@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM gcr.io/oss-fuzz-base/base-builder-jvm
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
 RUN git clone --depth 1 https://github.com/Twitter4J/Twitter4J/ Twitter4J
 COPY *.sh *.java $SRC/
 WORKDIR $SRC/Twitter4J

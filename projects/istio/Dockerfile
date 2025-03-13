@@ -15,7 +15,7 @@
 ################################################################################
 
 # Setup the builder for Istio. The standard Go builder is sufficient.
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN wget https://go.dev/dl/go1.23.4.linux-amd64.tar.gz \
     && mkdir temp-go \
     && rm -rf /root/.go/* \

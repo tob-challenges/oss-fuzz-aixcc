@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN apt-get update && apt-get install -y wget \
     binutils cmake ninja-build liblzma-dev libz-dev \
     pkg-config autoconf libtool

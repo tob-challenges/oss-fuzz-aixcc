@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 # Packages taken from:
 # * https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#dependency-build-instructions

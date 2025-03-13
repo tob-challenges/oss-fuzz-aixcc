@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 RUN apt-get update && apt-get install python3 openjdk-11-jdk -y
 RUN git clone --depth 1 https://github.com/google/cel-cpp/

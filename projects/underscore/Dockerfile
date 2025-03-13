@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN pip3 install --upgrade pip && pip3 install wheel
 RUN git clone --depth 1 https://github.com/doboy/Underscore underscore

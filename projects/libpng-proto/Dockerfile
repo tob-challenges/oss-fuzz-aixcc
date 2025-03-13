@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update -y && \
     apt-get install -y make autoconf automake libtool zlib1g-dev \
     binutils cmake ninja-build liblzma-dev libz-dev pkg-config

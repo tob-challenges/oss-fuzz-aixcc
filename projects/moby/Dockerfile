@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN apt-get update && apt-get install -y clang libbtrfs-dev pkg-config libdevmapper-dev
 RUN git clone --depth 1 https://github.com/moby/moby
 COPY build.sh $SRC/

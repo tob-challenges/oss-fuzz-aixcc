@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y autoconf bison
 RUN git clone --depth=1 https://github.com/krb5/krb5.git
 RUN cp $SRC/krb5/src/tests/fuzzing/oss-fuzz.sh $SRC/build.sh

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 # Main repo
 RUN git clone --depth 1 -b develop https://github.com/eclipse/mosquitto ${SRC}/mosquitto

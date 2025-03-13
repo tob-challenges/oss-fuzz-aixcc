@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 RUN apt-get update && apt-get -y install iasl uuid-dev \
     libncurses-dev pkg-config libglib2.0-dev libpixman-1-dev \

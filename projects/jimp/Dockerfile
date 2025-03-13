@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-javascript
+FROM ghcr.io/aixcc-finals/base-builder-javascript:v1.0.0-rc3
 
 COPY build.sh $SRC/
 

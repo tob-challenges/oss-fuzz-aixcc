@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y wget autoconf automake libtool pkg-config gperf python
 RUN pip3 install meson ninja gyp-next packaging
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN apt install -y nodejs
 RUN pip3 install --upgrade pip
 RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh

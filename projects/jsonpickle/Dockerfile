@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN git clone --depth 1 https://github.com/jsonpickle/jsonpickle $SRC/jsonpickle
 RUN $SRC/jsonpickle/fuzzing/oss-fuzz-scripts/container-environment-bootstrap.sh
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade build
 RUN git clone https://github.com/pallets/jinja

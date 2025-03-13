@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make autoconf automake libtool \
   pkg-config cmake nasm autopoint gettext python3 libqb-dev libbz2-dev \
   libglib2.0-dev corosync libgnutls28-dev libcfg-dev libcpg-dev libcmap-dev \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-jvm
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
 
 RUN curl -L https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.12-bin.tar.gz -o ant.tar.gz && \
     mkdir -p $SRC/ant && \

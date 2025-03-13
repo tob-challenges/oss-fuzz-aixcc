@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-rust
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0-rc3
 RUN apt-get update && apt-get install -y \
     flex bison \
     python3-dev \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-swift
+FROM ghcr.io/aixcc-finals/base-builder-swift:v1.0.0-rc3
 
 # specific to project
 RUN apt-get update && apt-get install -y zlib1g-dev

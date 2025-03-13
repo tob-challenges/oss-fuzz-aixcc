@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y python3-pip python-setuptools bridge-utils \
   libglib2.0-dev libdbus-1-dev libudev-dev \
   libical-dev libreadline-dev udev \

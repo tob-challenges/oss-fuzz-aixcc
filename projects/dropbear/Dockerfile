@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y libz-dev autoconf mercurial
 RUN hg clone https://hg.ucc.asn.au/dropbear-fuzzcorpus dropbear-corpus
 RUN git clone https://github.com/mkj/dropbear dropbear

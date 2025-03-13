@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 RUN apt-get update && apt-get install -y automake ffmpeg libtool
 RUN git clone --depth 1 -b master https://android.googlesource.com/platform/external/libldac

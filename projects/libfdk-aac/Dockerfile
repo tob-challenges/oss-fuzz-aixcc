@@ -14,6 +14,6 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN git clone --depth 1 https://android.googlesource.com/platform/external/aac/
 COPY build.sh *.cpp $SRC/

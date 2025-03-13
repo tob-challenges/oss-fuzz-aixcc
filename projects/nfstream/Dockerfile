@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN apt-get update
 RUN apt-get install -y python3-dev autoconf automake libtool pkg-config flex bison gettext libjson-c-dev libpcap-dev
 RUN apt-get install -y libusb-1.0-0-dev libdbus-glib-1-dev libbluetooth-dev libnl-genl-3-dev libffi-dev python-dev

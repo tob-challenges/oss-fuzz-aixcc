@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-jvm
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
 
 RUN curl -L https://services.gradle.org/distributions/gradle-7.4.2-bin.zip -o gradle.zip && \
     unzip gradle.zip -d $SRC/gradle && \

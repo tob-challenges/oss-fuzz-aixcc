@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && \
     apt-get install -y python3-pip gtk-doc-tools libffi-dev autotools-dev libtool gperf
 RUN pip3 install -U meson==1.4.0 ninja packaging

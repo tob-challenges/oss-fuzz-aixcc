@@ -14,7 +14,7 @@
 #
 ##############################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y autoconf automake make libtool pkg-config
 RUN git clone --depth 1 https://git.torproject.org/tor.git
 RUN git clone --depth 1 https://git.torproject.org/fuzzing-corpora.git tor-fuzz-corpora

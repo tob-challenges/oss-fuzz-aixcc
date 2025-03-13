@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN git clone https://github.com/json-iterator/go json-iterator
 
 COPY fuzz_json.go $SRC/json-iterator/

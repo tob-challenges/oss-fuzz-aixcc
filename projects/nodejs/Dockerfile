@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make
 RUN apt-get install -y flex bison build-essential
 RUN git clone --recursive --depth 1 https://github.com/AdamKorcz/node --branch=all-new-fuzzers

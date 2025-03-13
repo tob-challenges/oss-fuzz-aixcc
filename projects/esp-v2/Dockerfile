@@ -16,7 +16,7 @@
 
 ## This file was copied from envoy (with minor changes).
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 
 RUN apt-get update && apt-get -y install  \
     build-essential \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
 RUN apt-get update && apt install -y autoconf automake pkg-config
 RUN git clone --depth 1 https://github.com/leethomason/tinyxml2
 RUN git clone --depth 1 --branch asio-1-18-1 https://github.com/chriskohlhoff/asio/

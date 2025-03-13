@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder-rust
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0-rc3
 
 RUN git clone --depth 1 https://github.com/servo/html5ever
 RUN git clone --depth 1 https://github.com/servo/rust-cssparser

@@ -14,8 +14,8 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN apt-get update && apt-get install -y make pkg-config
 RUN git clone --depth 1 https://github.com/google/tink
 

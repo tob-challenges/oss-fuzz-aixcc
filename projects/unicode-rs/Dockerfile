@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM gcr.io/oss-fuzz-base/base-builder-rust
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0-rc3
 
 RUN git clone --depth 1 https://github.com/unicode-rs/unicode-normalization
 RUN git clone --depth 1 https://github.com/unicode-rs/unicode-segmentation

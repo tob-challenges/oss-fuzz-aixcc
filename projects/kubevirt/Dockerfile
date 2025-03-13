@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder-go
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
 RUN apt update && apt install -y qemu-kvm libvirt-daemon-system
 RUN git clone --depth 1 https://github.com/kubevirt/kubevirt
 RUN git clone --depth=1 https://github.com/AdamKorcz/go-118-fuzz-build --branch=november-backup

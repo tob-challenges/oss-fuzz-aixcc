@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM gcr.io/oss-fuzz-base/base-builder-python
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
 RUN git clone --depth 1 --single-branch https://github.com/pypa/setuptools setuptools
 RUN git clone --depth 1 --single-branch https://github.com/pypa/distutils distutils
 RUN python3 -m pip install --upgrade pip \
