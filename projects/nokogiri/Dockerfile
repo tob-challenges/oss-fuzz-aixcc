@@ -14,7 +14,7 @@
 #
 ###############################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get --no-install-recommends install -y build-essential make curl wget
 
 RUN git clone --depth=1 https://github.com/sparklemotion/nokogiri.git

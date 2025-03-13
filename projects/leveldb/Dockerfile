@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y build-essential cmake gettext make
 RUN git clone --recurse-submodules https://github.com/google/leveldb.git
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
 RUN git clone --depth 1 --recursive https://github.com/ccc-spdm-tools/spdm-rs.git
 COPY build.sh $SRC/
 WORKDIR $SRC/spdm-rs

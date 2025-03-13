@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
 RUN git clone --depth 1 https://github.com/plgd-dev/go-coap.git
 RUN go install github.com/AdamKorcz/go-118-fuzz-build@latest
 COPY build.sh $SRC/

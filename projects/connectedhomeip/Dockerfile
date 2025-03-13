@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 
 # Install prerequisite packages
 # See connectedhomeip/docs/guides/BUILDING.md#prerequisites

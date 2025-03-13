@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y make python
 RUN git clone --depth 1 https://github.com/randombit/botan.git botan
 RUN git clone --depth 1 https://github.com/randombit/crypto-corpus.git fuzzer_corpus

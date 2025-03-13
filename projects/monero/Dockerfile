@@ -17,7 +17,7 @@
 # Multistage docker build, requires docker 17.05
 
 # builder stage
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 
 RUN set -ex && \
     apt-get update && \

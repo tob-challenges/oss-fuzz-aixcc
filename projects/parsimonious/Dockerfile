@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN pip3 install --upgrade pip
 RUN git clone https://github.com/erikrose/parsimonious parsimonious
 COPY *.sh *py $SRC/

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN git clone https://github.com/Neargye/magic_enum
 COPY build.sh *_fuzzer.cc $SRC/
 WORKDIR $SRC/magic_enum

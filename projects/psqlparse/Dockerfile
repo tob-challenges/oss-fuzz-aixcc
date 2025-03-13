@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN apt-get update && apt-get install -y flex bison python3-setuptools
 RUN pip3 install Cython
 RUN pip3 install --upgrade Cython

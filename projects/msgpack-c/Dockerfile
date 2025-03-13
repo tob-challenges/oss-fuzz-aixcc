@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y cmake wget bzip2
 RUN git clone --depth 1 --single-branch --branch cpp_master https://github.com/msgpack/msgpack-c.git msgpack-c
 

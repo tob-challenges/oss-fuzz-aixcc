@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool libtool-bin pkg-config gettext sudo default-jdk
 RUN git clone --depth 1 https://github.com/xiph/flac.git
 RUN git clone --depth 1 https://github.com/xiph/ogg.git

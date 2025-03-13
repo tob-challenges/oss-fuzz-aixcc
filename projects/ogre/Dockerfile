@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update -y && apt-get install -y curl libgtest-dev libx11-dev
 RUN git clone --depth 1 https://github.com/OGRECave/ogre
 COPY build.sh *.cpp $SRC/

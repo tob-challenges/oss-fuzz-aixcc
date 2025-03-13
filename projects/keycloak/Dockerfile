@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
 
 RUN apt update && apt install openjdk-17-jdk libxext6 libxrender1 libxtst6 -y
 

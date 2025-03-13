@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y pkg-config zlib1g-dev libffi-dev liblzma-dev libcbor-dev
 RUN python3 -m pip install -U jinja2 packaging meson ninja
 RUN git clone --depth 1 https://github.com/fwupd/fwupd.git fwupd

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
 
 ENV GOPATH="${GOPATH:-/root/go}"
 ENV ORG_ROOT="${GOPATH}/src/github.com/go-git"

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN git clone https://github.com/greg7mdp/parallel-hashmap
 
 WORKDIR $SRC/parallel-hashmap

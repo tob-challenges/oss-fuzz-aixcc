@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
 
 # Install maven configuration, which is also used by gradles's publishToMavenLocal.
 

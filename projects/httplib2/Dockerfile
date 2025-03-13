@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN apt-get update && apt-get install -y libffi-dev
 RUN git clone --depth 1 https://github.com/httplib2/httplib2
 RUN python3 -m pip install --upgrade pip pyparsing

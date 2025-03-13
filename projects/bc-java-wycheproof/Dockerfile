@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
 
 RUN git clone https://github.com/google/wycheproof --depth 1
 WORKDIR wycheproof

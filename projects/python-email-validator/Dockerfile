@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN python3 -m pip install --upgrade pip
 RUN git clone --depth 1 https://github.com/JoshData/python-email-validator python-email-validator

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust as builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-rust as builder:v1.0.0
 RUN apt-get update
 RUN git clone --depth 1 https://github.com/bincode-org/bincode.git
 COPY build.sh $SRC/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 https://github.com/gfx-rs/wgpu wgpu
 WORKDIR wgpu/naga

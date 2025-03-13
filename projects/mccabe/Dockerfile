@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN pip3 install --upgrade pip
 RUN git clone https://github.com/pycqa/mccabe mccabe
 COPY *.sh *py $SRC/

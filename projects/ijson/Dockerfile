@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN apt-get update && apt-get install -y libffi-dev ruby mercurial
 RUN pip3 install --upgrade pip cffi
 RUN git clone https://github.com/ICRAR/ijson ijson

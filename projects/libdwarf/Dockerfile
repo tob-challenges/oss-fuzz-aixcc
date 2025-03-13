@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get -qq update && apt-get install -qq -y cmake make zlib1g-dev
 RUN git clone --depth=1 https://github.com/davea42/libdwarf-code $SRC/libdwarf
 RUN git clone --depth=1 https://github.com/davea42/libdwarf-binary-samples $SRC/libdwarf-binary-samples

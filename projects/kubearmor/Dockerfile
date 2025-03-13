@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
 ENV FUZZING_LANGUAGE=go
 RUN git clone https://github.com/kubearmor/KubeArmor
 COPY build.sh $SRC/

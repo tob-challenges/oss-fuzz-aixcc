@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y make autoconf autoconf-archive automake gettext libtool pkg-config
 
 RUN git clone --depth 1 --branch master https://github.com/mdbtools/mdbtools mdbtools

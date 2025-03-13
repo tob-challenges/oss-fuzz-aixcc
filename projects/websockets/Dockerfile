@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN git clone --depth 1 https://github.com/aaugustin/websockets
 WORKDIR websockets
 COPY build.sh $SRC/

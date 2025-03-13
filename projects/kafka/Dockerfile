@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 
 RUN apt-get update -y && apt-get install -y wget software-properties-common
 RUN wget -qO - https://packages.confluent.io/deb/7.0/archive.key | apt-key add -

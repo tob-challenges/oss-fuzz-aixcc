@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-swift:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-swift:v1.0.0
 
 # specific swift-nio
 RUN git clone --depth 1 https://github.com/google/fuzzing

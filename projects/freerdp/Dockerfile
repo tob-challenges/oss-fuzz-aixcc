@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 
 # See https://github.com/FreeRDP/FreeRDP/wiki/Compilation
 # Install Git and base dependences.

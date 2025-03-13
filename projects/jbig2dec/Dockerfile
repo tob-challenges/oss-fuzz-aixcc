@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y make libtool pkg-config vim libreadline-dev wget autoconf
 RUN git clone --recursive --depth 1 git://git.ghostscript.com/jbig2dec.git jbig2dec
 RUN mkdir tests

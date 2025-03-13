@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
 RUN git clone https://github.com/python-excel/xlrd
 COPY build.sh *.py $SRC/
 WORKDIR xlrd

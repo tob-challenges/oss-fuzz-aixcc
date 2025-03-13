@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
 RUN git clone --depth 1 https://github.com/metallb/metallb.git
 COPY build.sh $SRC/
 WORKDIR $SRC/metallb

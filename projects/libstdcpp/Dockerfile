@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN sed -i -e 's/^# deb-src/deb-src/g' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN apt build-dep -y g++-10

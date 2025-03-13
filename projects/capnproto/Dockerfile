@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN apt-get update && apt-get install -y autoconf automake libtool zlib1g-dev
 RUN git clone --depth 1 https://github.com/capnproto/capnproto
 WORKDIR $SRC/capnproto

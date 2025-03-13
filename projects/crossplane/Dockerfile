@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
 RUN git clone --depth 1 https://github.com/crossplane/crossplane-runtime $SRC/crossplane-runtime
 RUN git clone --depth 1 https://github.com/crossplane/crossplane $SRC/crossplane
 COPY build.sh $SRC/

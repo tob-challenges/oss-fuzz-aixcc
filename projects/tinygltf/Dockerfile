@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0-rc3
+FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
 RUN pip3 install meson ninja
 RUN git clone --depth 1 https://github.com/syoyo/tinygltf.git
 WORKDIR $SRC/tinygltf
