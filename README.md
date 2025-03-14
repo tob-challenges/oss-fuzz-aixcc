@@ -10,7 +10,7 @@ in this repository. The list of projects in the projects directory does
 not reflect which projects will be used in any AFC round.***
 
 Competitors are recommended to test their CRS against public repositories
-using this compeition fork. Competitors are recommended to use the following
+using this competition fork. Competitors are recommended to use the following
 commands to build and run harnesses.
 
 ```bash
