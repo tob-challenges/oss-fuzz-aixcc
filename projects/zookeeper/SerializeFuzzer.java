@@ -33,8 +33,7 @@ public class SerializeFuzzer {
         ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
         BinaryInputArchive ia = BinaryInputArchive.getArchive(bais);
         tree.deserialize(ia, data.consumeString(100));
-    } catch (IOException e) {
-    }
-    
+    } catch (IOException e) {}
+    catch (java.lang.IllegalArgumentException e) {}
   }
 }

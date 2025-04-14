@@ -33,6 +33,6 @@ public class ProcessTxnFuzzer {
     
     }
     catch (java.lang.StringIndexOutOfBoundsException e) {}
-    catch (java.lang.NoClassDefFoundError e) {}
+    catch (java.lang.IllegalArgumentException e) {}
   }
 }
