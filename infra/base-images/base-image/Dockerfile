@@ -26,7 +26,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y libc6-dev binutils libgcc-9-dev tzdata && \
+    apt-get install -y libc6-dev binutils libgcc-9-dev tzdata locales locales-all && \
     apt-get autoremove -y
 
 ENV OUT=/out
@@ -34,5 +34,7 @@ ENV SRC=/src
 ENV WORK=/work
 ENV PATH="$PATH:/out"
 ENV HWASAN_OPTIONS=random_tags=0
+#set locale to utf8
+ENV LC_ALL=C.UTF-8
 
 RUN mkdir -p $OUT $SRC $WORK && chmod a+rwx $OUT $SRC $WORK
