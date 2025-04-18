@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
 ENV GOPATH /root/go
 ENV PATH $PATH:/root/.go/bin:$GOPATH/bin
 RUN install_go.sh

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0-rc1
 
 RUN curl -L https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.14-bin.tar.gz -o ant.tar.gz && \
     mkdir -p $SRC/ant && \

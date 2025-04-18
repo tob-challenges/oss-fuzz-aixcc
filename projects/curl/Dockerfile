@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 
 RUN git clone --depth 1 https://github.com/curl/curl.git /src/curl
 RUN git clone --depth 1 https://github.com/curl/curl-fuzzer.git /src/curl_fuzzer

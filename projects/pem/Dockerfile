@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install 'pyinstaller==6.10.0' 'setuptools==72.1.0' twisted

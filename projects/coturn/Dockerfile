@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y cmake libssl-dev libevent-dev
 RUN git clone https://github.com/coturn/coturn
 COPY build.sh $SRC/

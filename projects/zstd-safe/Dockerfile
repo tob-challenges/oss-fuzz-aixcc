@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
 
 RUN git clone --recursive https://github.com/gyscos/zstd-rs
 WORKDIR $SRC/zstd-rs/zstd-safe

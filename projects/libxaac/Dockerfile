@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y wget cmake
 RUN git clone https://github.com/ittiam-systems/libxaac.git
 ADD https://storage.googleapis.com/android_media/external/libxaac/fuzzer/xaac_dec_fuzzer_seed_corpus.zip $SRC/

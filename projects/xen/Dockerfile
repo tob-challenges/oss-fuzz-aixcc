@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 
 RUN apt-get update && apt-get -y install iasl uuid-dev \
     libncurses-dev pkg-config libglib2.0-dev libpixman-1-dev \

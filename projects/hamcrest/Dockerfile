@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0-rc1
 
 RUN git clone https://github.com/hamcrest/JavaHamcrest.git hamcrest
 

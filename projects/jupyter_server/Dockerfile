@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 RUN apt install -y nodejs
 RUN pip3 install --upgrade pip
 RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh

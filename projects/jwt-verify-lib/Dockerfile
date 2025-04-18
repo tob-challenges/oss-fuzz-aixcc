@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 
 RUN apt-get update && apt-get install python3 -y
 RUN git clone --depth 1 https://github.com/google/jwt_verify_lib.git

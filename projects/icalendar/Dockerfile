@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 RUN pip3 install --upgrade pip
 RUN git clone --depth 1 https://github.com/collective/icalendar.git icalendar \
         && cp icalendar/src/icalendar/fuzzing/build.sh $SRC/

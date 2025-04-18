@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y make autoconf automake libtool build-essential libavahi-client-dev libgnutls28-dev libnss-mdns zlib1g-dev libsystemd-dev
 RUN git clone --depth 1 https://github.com/OpenPrinting/libcups.git
 RUN git clone --depth 1 https://github.com/OpenPrinting/fuzzing.git

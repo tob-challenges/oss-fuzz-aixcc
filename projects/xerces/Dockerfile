@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0-rc1
 
 RUN apt-get update && apt-get install -y make autoconf automake libtool openjdk-8-jdk
 #RUN git clone --depth 1 https://github.com/apache/xerces2-j.git xerces     # or use other version control

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0-rc1
 RUN apt-get update && apt-get install -y mesa-opencl-icd ocl-icd-opencl-dev gcc \
     git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev
 RUN git clone --depth 1 https://github.com/filecoin-project/lotus

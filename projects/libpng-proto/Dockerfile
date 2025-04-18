@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update -y && \
     apt-get install -y make autoconf automake libtool zlib1g-dev \
     binutils cmake ninja-build liblzma-dev libz-dev pkg-config

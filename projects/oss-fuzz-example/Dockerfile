@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 # Install the packages needed for building the project
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 
