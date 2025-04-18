@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 RUN apt-get install -y libffi-dev mercurial
 RUN hg clone https://foss.heptapod.net/pypy/cffi cffi
 COPY *.sh *py $SRC/

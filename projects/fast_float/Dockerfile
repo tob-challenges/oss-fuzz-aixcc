@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN git clone --depth 1 https://github.com/fastfloat/fast_float.git fast_float
 RUN cp fast_float/fuzz/build.sh $SRC/
 WORKDIR fast_float

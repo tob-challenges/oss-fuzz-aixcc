@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN echo "CXX=$CXX"
 RUN echo "CXXFLAGS=$CXXFLAGS"
 RUN apt-get update && apt-get install -y cmake ninja-build

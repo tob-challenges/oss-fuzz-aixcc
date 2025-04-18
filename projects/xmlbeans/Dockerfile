@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0-rc1
 
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 https://github.com/apache/xmlbeans xmlbeans     # or use other version control

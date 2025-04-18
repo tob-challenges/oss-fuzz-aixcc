@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 RUN git clone https://github.com/cloud-custodian/cloud-custodian
 RUN apt-get install build-essential libssl-dev libffi-dev pkg-config python3-dev cargo -y
 RUN pip3 install --upgrade pip

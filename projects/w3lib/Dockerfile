@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 RUN pip3 install --upgrade pip
 RUN git clone https://github.com/scrapy/w3lib w3lib
 COPY *.sh *py $SRC/

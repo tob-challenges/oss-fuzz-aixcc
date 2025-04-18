@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y cmake zlib1g-dev libpng-dev libjpeg-dev libfreetype-dev libproj-dev libxml2-dev
 RUN git clone --depth 1 https://github.com/OSGeo/gdal
 RUN git clone --depth 1 https://github.com/MapServer/MapServer

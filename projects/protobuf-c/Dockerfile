@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 MAINTAINER guidovranken@gmail.com
 RUN apt-get update && apt-get install -y \
   make \

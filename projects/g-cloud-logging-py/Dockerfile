@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
 
 RUN git clone https://github.com/googleapis/python-logging gcloud-logging
 RUN pip3 install --upgrade pip mock

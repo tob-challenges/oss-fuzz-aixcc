@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
 RUN apt-get --yes update \
    && apt-get install --no-install-recommends --yes \
    libssl-dev \

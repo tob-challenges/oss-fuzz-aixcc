@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
 
 RUN git clone --depth 1 https://github.com/snapview/tungstenite-rs.git
 COPY build.sh $SRC/

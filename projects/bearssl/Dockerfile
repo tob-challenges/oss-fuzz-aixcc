@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y make autoconf automake libtool wget python
 RUN git clone --depth 1 https://www.bearssl.org/git/BearSSL
 RUN git clone --depth 1 https://github.com/randombit/botan.git

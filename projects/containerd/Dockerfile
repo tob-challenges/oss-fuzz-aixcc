@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0-rc1
 RUN apt-get update && apt-get install -y btrfs-progs libc-dev pkg-config libseccomp-dev gcc wget libbtrfs-dev
 RUN git clone --depth 1 https://github.com/containerd/containerd
 RUN git clone --depth=1 https://github.com/AdamKorcz/instrumentation

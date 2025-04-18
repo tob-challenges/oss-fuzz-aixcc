@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends python python3 bison flex make wget xz-utils libunwind-dev lsb-release build-essential libssl-dev
 

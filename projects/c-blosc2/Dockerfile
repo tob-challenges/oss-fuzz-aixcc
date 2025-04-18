@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y cmake make
 RUN git clone --depth 1 https://github.com/Blosc/c-blosc2.git c-blosc2
 WORKDIR c-blosc2

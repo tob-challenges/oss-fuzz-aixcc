@@ -12,7 +12,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
 RUN apt-get update && apt-get install -y pkg-config libssl-dev curl libcurl4-openssl-dev ninja-build
 RUN git clone --depth 1 https://github.com/danburkert/prost
 WORKDIR $SRC

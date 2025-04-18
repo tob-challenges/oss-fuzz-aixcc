@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 RUN apt-get update && apt-get install -y make libtool pkg-config
 RUN git clone --recursive --depth 1 git://git.ghostscript.com/mupdf.git mupdf
 RUN git clone --depth 1 https://github.com/mozilla/pdf.js pdf.js && \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
 
 RUN apt-get update && apt-get install -y make autoconf automake libtool zip wget python bsdmainutils libcrypt-dev:i386
 RUN git clone --depth 1 https://github.com/wolfssl/wolfssl $SRC/wolfssl

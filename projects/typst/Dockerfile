@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.0.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
 
 RUN rustup toolchain install nightly-2024-10-29
 RUN git clone --depth 1 https://github.com/typst/typst.git typst
