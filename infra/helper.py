@@ -876,27 +876,32 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
   command = _env_to_docker_args(env)
   if source_path:
     workdir = _workdir_from_dockerfile(project)
-    if mount_path:
-      command += [
-          '-v',
-          '%s:%s' % (_get_absolute_path(source_path), mount_path),
-      ]
-    else:
-      if workdir == '/src':
-        logger.error('Cannot use local checkout with "WORKDIR: /src".')
-        return False
+    stateless_path = mount_path if mount_path else workdir
 
-      command += [
-          '-v',
-          '%s:%s' % (_get_absolute_path(source_path), workdir),
-      ]
+    if stateless_path == '/src':
+      logger.error('Cannot mount local source targeting "/src".')
+      return False
+
+    command += [
+        '-v',
+        '%s:%s:ro' % (_get_absolute_path(source_path), '/local-source-mount'),
+    ]
 
   command += [
       '-v', f'{project_out}:/out', '-v', f'{project.work}:/work',
       f'aixcc-afc/{project.name}'
   ]
+
   if sys.stdin.isatty():
     command.insert(-1, '-t')
+
+  if source_path:
+    default_cmd = 'compile'
+    command += [
+      '/bin/bash', 
+      '-c', 
+      f'pushd $SRC && rm -rf {stateless_path} && cp -r /local-source-mount {stateless_path} && popd && {default_cmd}'
+    ]
 
   result = docker_run(command, architecture=architecture)
   if not result:
