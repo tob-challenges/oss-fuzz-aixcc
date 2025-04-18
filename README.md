@@ -1,4 +1,10 @@
-# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.1.0)
+
+Changes in v1.1.0:
+
+* The state of oss-fuzz-aixcc has been synced with upstream changes at 162f2ab818f5992b66486a4d06cb0e3c88c37773.
+* `helper.py build_fuzzers` with local source now matches behavior of non-local source, keeping the build state clean between runs.
+* `base-image` has been updated to default its locale to C.UTF-8 instead of POSIX.
 
 This is a competition fork of oss-fuzz which is guaranteed to be
 compatible with the AFC challenges. This fork is designed to remain
