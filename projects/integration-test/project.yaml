@@ -1,0 +1,16 @@
+homepage: "https://aicyberchallenge.com/"
+language: c
+main_repo: "https://github.com/aixcc-finals/integration-test"
+
+fuzzing_engines:
+  - afl
+  - honggfuzz
+  - libfuzzer
+
+sanitizers:
+  - address
+  - memory
+  - undefined
+
+architectures:
+  - x86_64
