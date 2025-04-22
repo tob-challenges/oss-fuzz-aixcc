@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0
 
 RUN git clone https://github.com/apache/groovy.git
 COPY *.diff $SRC/

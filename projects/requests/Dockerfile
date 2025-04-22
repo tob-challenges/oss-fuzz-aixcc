@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
 
 RUN git clone --depth 1 --branch main https://github.com/psf/requests.git requests \
     && python3 -m pip install --upgrade pip \

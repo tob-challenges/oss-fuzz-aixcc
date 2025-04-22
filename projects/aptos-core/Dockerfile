@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
 RUN apt-get update && apt-get install -y make autoconf automake libclang-dev libtool pkg-config libudev-dev
 RUN git clone --depth=1 https://github.com/aptos-labs/aptos-core.git
 WORKDIR aptos-core

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0
 RUN curl -L https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip \
   -o maven.zip && \
   unzip maven.zip -d $SRC/maven && \

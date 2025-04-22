@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool wget gettext automake libxml2-dev m4 pkg-config bison flex python3.8-venv libssl-dev zlib1g-dev
 RUN git clone --depth 1 https://github.com/dovecot/core dovecot
 WORKDIR dovecot

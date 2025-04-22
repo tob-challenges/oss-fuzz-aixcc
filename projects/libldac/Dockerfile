@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 
 RUN apt-get update && apt-get install -y automake ffmpeg libtool
 RUN git clone --depth 1 -b master https://android.googlesource.com/platform/external/libldac

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool pkg-config libfontconfig1-dev libfreetype-dev libfribidi-dev python3-pip && \
     pip3 install meson==0.55.0 ninja
 

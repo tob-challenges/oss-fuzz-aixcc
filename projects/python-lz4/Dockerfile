@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
 RUN git clone --depth 1 https://github.com/python-lz4/python-lz4
 
 COPY build.sh $SRC/

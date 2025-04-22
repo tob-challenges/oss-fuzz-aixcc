@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust as builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust as builder:v1.1.0
 
 RUN git clone --depth 1 https://github.com/redis-rs/redis-rs.git
 COPY build.sh $SRC/

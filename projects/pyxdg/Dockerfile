@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
 RUN apt-get install -y libxml2-dev libxslt-dev zlib1g-dev
 RUN python3 -m pip install --upgrade pip && python3 -m pip install Cython
 RUN git clone --depth 1 https://github.com/lxml/lxml

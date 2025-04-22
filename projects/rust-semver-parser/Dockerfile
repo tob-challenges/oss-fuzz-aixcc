@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
 
 RUN git clone https://github.com/steveklabnik/semver-parser
 WORKDIR $SRC/semver-parser

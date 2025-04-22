@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y -q && \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update && apt-get install -y autoconf make libgif-dev libjpeg-dev libpng-dev libtool zip
 RUN git clone https://chromium.googlesource.com/webm/libwebp
 RUN git clone https://chromium.googlesource.com/webm/libwebp-test-data

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
 RUN git clone https://github.com/redis/go-redis redis
 COPY build.sh $SRC/
 WORKDIR $SRC/redis

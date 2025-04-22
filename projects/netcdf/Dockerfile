@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update && apt-get install -y cmake m4 zlib1g-dev libcurlpp-dev libcurl4-openssl-dev
 RUN git clone --depth 1 https://github.com/Unidata/netcdf-c
 COPY build.sh $SRC

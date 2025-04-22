@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update && apt-get install -y pkg-config libncurses5-dev libssl-dev python3-pip
 RUN pip3 install -U meson ninja
 RUN git clone https://github.com/irssi/irssi

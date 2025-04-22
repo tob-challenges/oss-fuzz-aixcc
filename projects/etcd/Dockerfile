@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
 RUN git clone --depth 1 https://github.com/etcd-io/etcd
 RUN git clone --depth 1 https://github.com/etcd-io/raft
 RUN git clone --depth 1 https://github.com/cncf/cncf-fuzzing
