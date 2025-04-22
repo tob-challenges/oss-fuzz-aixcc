@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
 RUN git clone --depth 1 https://github.com/go-ole/go-ole
 WORKDIR $SRC/go-ole
 COPY build.sh fuzz_test.go $SRC/

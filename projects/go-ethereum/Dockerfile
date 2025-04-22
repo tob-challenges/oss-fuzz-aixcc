@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
 
 RUN git clone --single-branch --depth=1 https://github.com/ethereum/go-ethereum $GOPATH/src/github.com/ethereum/go-ethereum 
 RUN (cd $GOPATH/src/github.com/ethereum/go-ethereum && go mod download)

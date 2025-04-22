@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
 
 # library build dependencies
 RUN apt-get update && \

@@ -15,7 +15,7 @@
 ################################################################################
 
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 # ! This project was pinned after a clang bump. Please remove the pin, Try to fix any build warnings and errors, as well as runtime errors
 # see https://github.com/google/oss-fuzz/pull/12365
 

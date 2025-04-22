@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN pip3 install --upgrade pip && pip3 install mock
 RUN git clone --depth 1 https://github.com/googleapis/google-auth-library-python-oauthlib

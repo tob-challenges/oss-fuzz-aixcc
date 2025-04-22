@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update
 RUN apt-get install -y build-essential libssl-dev libncurses5-dev libncursesw5-dev make cmake perl bison pkg-config
 RUN git clone --depth 1 https://github.com/mysql/mysql-server

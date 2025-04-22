@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
 RUN git clone --depth 1 https://github.com/tokio-rs/tokio tokio     # or use other version control
 WORKDIR tokio
 COPY build.sh $SRC/

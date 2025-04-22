@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool curl cmake python llvm-dev libclang-dev clang
 
 RUN git clone --depth 1 --recursive https://github.com/mozilla/mp4parse-rust mp4parse-rust

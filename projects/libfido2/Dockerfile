@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN apt-get install -y cmake libpcsclite-dev libudev-dev pkg-config chrpath
 RUN git clone --depth 1 --branch v0.11.0 https://github.com/PJK/libcbor

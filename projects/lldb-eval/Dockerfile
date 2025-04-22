@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
 
 RUN apt-get update \
     && apt-get install -y wget git patchelf zlib1g-dev python libtinfo-dev --no-install-recommends

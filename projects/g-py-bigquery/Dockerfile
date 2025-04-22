@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
 RUN pip3 install --upgrade pip && \
     pip3 install numpy ipython grpcio
 RUN git clone https://github.com/googleapis/python-bigquery
