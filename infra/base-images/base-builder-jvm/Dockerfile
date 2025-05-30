@@ -37,7 +37,7 @@ WORKDIR $SRC
 
 RUN git clone https://github.com/aixcc-finals/jazzer-aixcc jazzer && \
     cd jazzer && \
-    git checkout 17613188f47f8a11093f5f95e10c1d70dcc0618d
+    git checkout 43791565a765b854b537d878c9cab757ff1f2140
 
 WORKDIR $SRC/jazzer
 
