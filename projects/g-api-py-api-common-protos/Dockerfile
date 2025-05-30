@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
 RUN apt-get update && apt-get install -y make autoconf automake libtool zlib1g-dev pkg-config
 RUN pip3 install --upgrade pip && pip3 install google-api-core
 RUN git clone --depth 1 --recursive https://github.com/protocolbuffers/protobuf.git

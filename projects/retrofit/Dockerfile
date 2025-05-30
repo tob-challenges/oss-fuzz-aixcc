@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0-rc1
 
 RUN apt update && apt install -y default-jdk
 

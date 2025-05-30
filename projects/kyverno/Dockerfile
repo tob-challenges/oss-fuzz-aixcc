@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0-rc1
 RUN git clone --depth 1 https://github.com/kyverno/kyverno
 COPY build.sh $SRC/
 WORKDIR $SRC/kyverno

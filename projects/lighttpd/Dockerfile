@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 RUN apt-get update && apt-get install -y libz-dev libpcre2-dev libtool pkg-config autoconf
 RUN git clone https://github.com/lighttpd/lighttpd1.4
 

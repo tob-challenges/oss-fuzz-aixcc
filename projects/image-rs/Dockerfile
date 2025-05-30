@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
 
 RUN git clone https://github.com/image-rs/image
 WORKDIR $SRC/image

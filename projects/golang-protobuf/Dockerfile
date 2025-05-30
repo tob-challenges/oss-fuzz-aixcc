@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0-rc1
 
 RUN git clone https://go.googlesource.com/protobuf $GOPATH/src/google.golang.org/protobuf
 COPY build.sh $SRC/

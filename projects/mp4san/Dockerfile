@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
 
 RUN git clone --depth 1 https://github.com/signalapp/mp4san mp4san
 WORKDIR mp4san

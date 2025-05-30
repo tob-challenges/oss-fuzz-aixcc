@@ -4,7 +4,7 @@
 #
 # Defines a docker image that can build fuzzers.
 #
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 RUN apt-get update && apt-get install -y make libssl-dev binutils libgcc-9-dev
 RUN git clone --depth 1 https://chromium.googlesource.com/chromiumos/third_party/tpm2
 WORKDIR tpm2

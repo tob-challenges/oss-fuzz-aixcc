@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 RUN apt-get update && apt-get install -y make mercurial zlib1g-dev gyp ninja-build libssl-dev python
 
 RUN hg clone https://hg.mozilla.org/projects/nspr nspr

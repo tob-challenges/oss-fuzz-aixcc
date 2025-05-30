@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 RUN git clone --depth 1 https://github.com/tinyobjloader/tinyobjloader
 COPY build.sh $SRC
 WORKDIR $SRC/tinyobjloader

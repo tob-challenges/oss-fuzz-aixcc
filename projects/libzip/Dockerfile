@@ -15,7 +15,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 
 
 RUN apt-get update && apt-get install -y cmake pkg-config zlib1g-dev libbz2-dev liblzma-dev libzstd-dev

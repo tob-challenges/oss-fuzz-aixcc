@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 RUN apt-get update
 RUN git clone https://github.com/benhoyt/inih.git
 COPY inihfuzz.c $SRC/inih/inihfuzz.c

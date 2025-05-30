@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0-rc1
 RUN git clone --depth 1 https://github.com/RoaringBitmap/RoaringBitmap RoaringBitmap
 COPY *.sh *.java $SRC/
 WORKDIR $SRC/RoaringBitmap

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
 RUN git clone --depth 1 https://github.com/agronholm/cbor2.git
 WORKDIR cbor2
 COPY build.sh *.py $SRC/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 https://github.com/gimli-rs/gimli gimli
 RUN git clone --depth 1 https://github.com/gimli-rs/gimli-libfuzzer-corpora $SRC/gimli/fuzz/corpus

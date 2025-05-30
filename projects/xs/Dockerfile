@@ -12,7 +12,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
 
 #Apache-2.0 license
 RUN git clone --depth 1 https://github.com/dvyukov/go-fuzz-corpus && \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
 
 RUN git clone --depth=1 --recursive https://chromium.googlesource.com/crosvm/crosvm $SRC/crosvm
 

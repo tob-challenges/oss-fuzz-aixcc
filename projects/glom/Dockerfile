@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
 RUN git clone https://github.com/mahmoud/glom
 COPY build.sh *.py $SRC/
 WORKDIR glom
