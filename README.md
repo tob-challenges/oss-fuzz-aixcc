@@ -1,10 +1,24 @@
-# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.1.0)
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.2.0-rc1)
+
+Changes in v1.2.0 (rc1):
+
+- `base-builder-jvm` has been updated to use the lastest aixcc-jazzer ref, adjusting the OsCmdInjection sanitizer.
+    - This adjustment adds some safety measures around OsCmdInjection to reduce risk and reduce potential 
+      unintentional crash-state explosion when dealing with such vulnerabilities.
+- `helper.py` commands `build_image`, `build_fuzzers`, and `shell` have added optional flags to control docker image tags.
+    - Adds the flag `--docker_image_tag TAG` to the commands. This is entirely optional and backwards 
+      compatible, but can allow control over the project-image docker tag, enabling easier parallel processing.
+- `helper.py reproduce` has an added optional flag to reproduce with docker running in non-privileged mode.
+- `helper.py reproduce` has an added optional flag to timeout when the reproduce subprocess hangs.
+    - This enables crash detection to handle cases where sanitizers are hit, yet for various reasons the 
+      reproduce subprocess does not resolve and hangs indefinitely. If `timeout` is set, when the reproduce 
+      subprocess does not resolve within `timeout` seconds, reproduce will end the subprocess and return with code 124.
 
 Changes in v1.1.0:
 
-* The state of oss-fuzz-aixcc has been synced with upstream changes at 162f2ab818f5992b66486a4d06cb0e3c88c37773.
-* `helper.py build_fuzzers` with local source now matches behavior of non-local source, keeping the build state clean between runs.
-* `base-image` has been updated to default its locale to C.UTF-8 instead of POSIX.
+- The state of oss-fuzz-aixcc has been synced with upstream changes at 162f2ab818f5992b66486a4d06cb0e3c88c37773.
+- `helper.py build_fuzzers` with local source now matches behavior of non-local source, keeping the build state clean between runs.
+- `base-image` has been updated to default its locale to C.UTF-8 instead of POSIX.
 
 This is a competition fork of oss-fuzz which is guaranteed to be
 compatible with the AFC challenges. This fork is designed to remain
