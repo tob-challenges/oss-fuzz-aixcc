@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake xxd
 RUN git clone https://github.com/ggerganov/llama.cpp
 WORKDIR llama.cpp

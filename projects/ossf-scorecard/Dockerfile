@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
 RUN git clone --depth 1 https://github.com/ossf/scorecard
 COPY build.sh yaml_fuzzer.go $SRC/
 WORKDIR $SRC/scorecard

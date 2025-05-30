@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make wget tshark
 
 RUN git clone --recursive -b release --depth 1 https://github.com/dnp3/opendnp3.git opendnp3

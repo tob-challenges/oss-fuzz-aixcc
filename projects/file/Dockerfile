@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt install -y make autoconf automake libtool shtool
 RUN apt-get update && apt install -y libbz2-dev      liblzma-dev      zlib1g-dev      libzstd-dev      liblz4-dev
 RUN apt-get update && apt install -y libbz2-dev:i386 liblzma-dev:i386 zlib1g-dev:i386 libzstd-dev:i386 liblz4-dev:i386 

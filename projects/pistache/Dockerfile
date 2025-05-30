@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN pip3 install meson==0.53.0 ninja
 RUN git clone --depth 1 https://github.com/pistacheio/pistache pistache

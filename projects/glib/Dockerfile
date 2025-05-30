@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y python3-pip
 RUN unset CFLAGS CXXFLAGS && pip3 install -U meson ninja packaging
 RUN git clone --depth 1 https://gitlab.gnome.org/GNOME/glib

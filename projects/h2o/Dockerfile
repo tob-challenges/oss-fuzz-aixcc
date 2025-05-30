@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool cmake zlib1g-dev pkg-config libssl-dev
 RUN git clone https://github.com/h2o/h2o
 WORKDIR h2o

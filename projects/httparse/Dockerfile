@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
 
 RUN git clone https://github.com/seanmonstar/httparse
 WORKDIR $SRC

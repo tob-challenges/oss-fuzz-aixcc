@@ -15,7 +15,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y build-essential zlib1g-dev zlib1g-dev:i386 python make automake
 
 RUN git clone --depth 1 https://github.com/alembic/alembic

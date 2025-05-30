@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 
 RUN apt-get update && apt-get install -y git autoconf automake libtool make \
    libreadline-dev texinfo libjson-c-dev pkg-config bison flex python3-pip \

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool curl cmake python llvm-dev libclang-dev clang
 
 RUN git clone --depth 1 https://github.com/serde-rs/json json

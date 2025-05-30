@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0
 RUN git clone --depth 1 https://github.com/Twitter4J/Twitter4J/ Twitter4J
 COPY *.sh *.java $SRC/
 WORKDIR $SRC/Twitter4J

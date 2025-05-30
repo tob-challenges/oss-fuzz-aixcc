@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 
 RUN apt-get update && apt-get install -y ninja-build lsb-core software-properties-common zlib1g-dev
 RUN pip3 install -U cmake

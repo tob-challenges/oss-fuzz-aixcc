@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool subversion
 
 RUN git clone --recursive https://github.com/PCRE2Project/pcre2 pcre2

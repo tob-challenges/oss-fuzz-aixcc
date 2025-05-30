@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN apt-get update && apt-get install -y pkg-config
 RUN git clone https://github.com/dask/dask
 COPY build.sh fuzz_fuse.py $SRC/

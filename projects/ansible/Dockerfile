@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 
 RUN apt-get update && apt-get install -y make autoconf automake build-essential
 RUN pip3 install --upgrade pip

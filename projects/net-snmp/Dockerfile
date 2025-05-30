@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN git clone -q --depth 1 https://github.com/net-snmp/net-snmp net-snmp
 RUN net-snmp/ci/install.sh
 WORKDIR net-snmp

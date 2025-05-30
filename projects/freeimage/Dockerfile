@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool wget dos2unix
 RUN svn checkout https://svn.code.sf.net/p/freeimage/svn/ freeimage-svn
 WORKDIR $SRC/freeimage-svn/FreeImage/trunk/

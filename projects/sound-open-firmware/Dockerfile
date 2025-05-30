@@ -18,7 +18,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 
 # Base packages
 RUN apt-get -y update && apt-get -y install \

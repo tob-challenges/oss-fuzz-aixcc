@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
 RUN git clone --depth 1 https://github.com/facebookexperimental/starlark-rust.git starlark-rust
 RUN rustup update nightly
 WORKDIR starlark-rust

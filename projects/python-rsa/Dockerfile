@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN git clone https://github.com/sybrenstuvel/python-rsa
 WORKDIR $SRC
 COPY build.sh fuzz_* $SRC/

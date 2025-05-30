@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN \
   apt-get update && \
   apt-get install -y libtool libusb-1.0-0-dev pkg-config libglib2.0-dev && \

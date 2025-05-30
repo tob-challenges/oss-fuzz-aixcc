@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0
 
 RUN apt-get update && apt-get install ant -y
 RUN git clone --depth 1 https://github.com/tukaani-project/xz-java $SRC/xz-java

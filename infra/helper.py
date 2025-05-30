@@ -37,7 +37,7 @@ import templates
 OSS_FUZZ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 BUILD_DIR = os.path.join(OSS_FUZZ_DIR, 'build')
 
-BASE_IMAGE_TAG = ':v1.1.0' # no tag for latest
+BASE_IMAGE_TAG = ':v1.2.0' # no tag for latest
 
 BASE_RUNNER_IMAGE = f'ghcr.io/aixcc-finals/base-runner{BASE_IMAGE_TAG}'
 
@@ -320,6 +320,11 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
   build_image_parser.add_argument('--no-pull',
                                   action='store_true',
                                   help='Do not pull latest base image.')
+  build_image_parser.add_argument('--docker_image_tag',
+                                    dest='docker_image_tag',
+                                    default='latest',
+                                    help='docker image build tag'
+                                    'default: latest')
   _add_external_project_args(build_image_parser)
 
   build_fuzzers_parser = subparsers.add_parser(
@@ -346,6 +351,11 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
                                     action='store_false',
                                     help='do not clean existing artifacts '
                                     '(default).')
+  build_fuzzers_parser.add_argument('--docker_image_tag',
+                                    dest='docker_image_tag',
+                                    default='latest',
+                                    help='docker image build tag'
+                                    'default: latest')
   build_fuzzers_parser.set_defaults(clean=False)
 
   fuzzbench_build_fuzzers_parser = subparsers.add_parser(
@@ -490,9 +500,19 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
                                 action='store_true',
                                 default=False,
                                 help='return underlying exit codes instead of True/False.')
+  reproduce_parser.add_argument('--not_privileged',
+                                dest='privileged',
+                                action='store_false',
+                                default=True,
+                                help='reproduce without running docker in privileged mode.')
   reproduce_parser.add_argument('--err_result', 
                                 help='exit code override for missing harness / fuzz targets '
                                 '(default err_result = 1).',
+                                type=int)
+  reproduce_parser.add_argument('--timeout', 
+                                help='timeout for reproduce subprocess '
+                                '(default: None).',
+                                default=None,
                                 type=int)
   reproduce_parser.add_argument('project',
                                 help='name of the project or path (external)')
@@ -512,6 +532,11 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
   shell_parser.add_argument('source_path',
                             help='path of local source',
                             nargs='?')
+  shell_parser.add_argument('--docker_image_tag',
+                            dest='docker_image_tag',
+                            default='latest',
+                            help='docker image build tag'
+                            'default: latest')
   _add_architecture_args(shell_parser)
   _add_engine_args(shell_parser)
   _add_sanitizer_args(shell_parser)
@@ -648,7 +673,9 @@ def _add_environment_args(parser):
                       help="set environment variable e.g. VAR=value")
 
 
-def build_image_impl(project, cache=True, pull=False, architecture='x86_64'):
+def build_image_impl(project, cache=True, pull=False, 
+                     architecture='x86_64', 
+                     docker_image_tag='latest'):
   """Builds image."""
   image_name = project.name
 
@@ -664,7 +691,7 @@ def build_image_impl(project, cache=True, pull=False, architecture='x86_64'):
     dockerfile_path = project.dockerfile_path
     docker_build_dir = project.path
     image_project = 'aixcc-afc'
-    image_name = '%s/%s' % (image_project, image_name)
+    image_name = '%s/%s:%s' % (image_project, image_name, docker_image_tag)
 
   if pull and not pull_images(project.language):
     return False
@@ -730,12 +757,19 @@ def prepare_aarch64_emulation():
   subprocess.check_call(['docker', 'buildx', 'use', ARM_BUILDER_NAME])
 
 
-def docker_run(run_args, print_output=True, architecture='x86_64', propagate_exit_codes=False):
+def docker_run(run_args, print_output=True, architecture='x86_64', propagate_exit_codes=False, privileged=True, timeout=None):
   """Calls `docker run`."""
   platform = 'linux/arm64' if architecture == 'aarch64' else 'linux/amd64'
-  command = [
-      'docker', 'run', '--privileged', '--shm-size=2g', '--platform', platform
-  ]
+
+  if privileged:
+      command = [
+          'docker', 'run', '--privileged', '--shm-size=2g', '--platform', platform
+      ]
+  else:
+      command = [
+          'docker', 'run', '--shm-size=2g', '--platform', platform
+      ]
+
   if os.getenv('OSS_FUZZ_SAVE_CONTAINERS_NAME'):
     command.append('--name')
     command.append(os.getenv('OSS_FUZZ_SAVE_CONTAINERS_NAME'))
@@ -756,10 +790,15 @@ def docker_run(run_args, print_output=True, architecture='x86_64', propagate_exi
   exit_code = 0
 
   try:
-    subprocess.check_call(command, stdout=stdout, stderr=subprocess.STDOUT)
+    subprocess.check_call(command, stdout=stdout, stderr=subprocess.STDOUT,
+                          timeout=timeout)
   except subprocess.CalledProcessError as e:
     print(f'subprocess command returned a non-zero exit status: {e.returncode}')
     exit_code = e.returncode
+  except subprocess.TimeoutExpired:
+    print(f'subprocess command timed out: {timeout=}')
+    exit_code = 124
+
   return exit_code if propagate_exit_codes else exit_code == 0
 
 
@@ -815,7 +854,8 @@ def build_image(args):
   if build_image_impl(args.project,
                       cache=args.cache,
                       pull=pull,
-                      architecture=args.architecture):
+                      architecture=args.architecture,
+                      docker_image_tag=args.docker_image_tag):
     return True
 
   return False
@@ -831,11 +871,15 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
     source_path,
     mount_path=None,
     child_dir='',
-    build_project_image=True):
+    build_project_image=True,
+    docker_image_tag='latest'):
   """Builds fuzzers."""
   if build_project_image and not build_image_impl(project,
-                                                  architecture=architecture):
+                                                  architecture=architecture,
+                                                  docker_image_tag=docker_image_tag):
     return False
+
+  docker_image = f'aixcc-afc/{project.name}:{docker_image_tag}'
 
   project_out = os.path.join(project.out, child_dir)
   if clean:
@@ -843,7 +887,7 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
 
     # Clean old and possibly conflicting artifacts in project's out directory.
     docker_run([
-        '-v', f'{project_out}:/out', '-t', f'aixcc-afc/{project.name}',
+        '-v', f'{project_out}:/out', '-t', f'{docker_image}',
         '/bin/bash', '-c', 'rm -rf /out/*'
     ],
                architecture=architecture)
@@ -851,7 +895,7 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
     docker_run([
         '-v',
         '%s:/work' % project.work, '-t',
-        'aixcc-afc/%s' % project.name, '/bin/bash', '-c', 'rm -rf /work/*'
+        f'{docker_image}', '/bin/bash', '-c', 'rm -rf /work/*'
     ],
                architecture=architecture)
 
@@ -889,7 +933,7 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
 
   command += [
       '-v', f'{project_out}:/out', '-v', f'{project.work}:/work',
-      f'aixcc-afc/{project.name}'
+      f'{docker_image}'
   ]
 
   if sys.stdin.isatty():
@@ -1000,7 +1044,8 @@ def build_fuzzers(args):
                          args.e,
                          args.source_path,
                          mount_path=args.mount_path,
-                         child_dir=child_dir)
+                         child_dir=child_dir,
+                         docker_image_tag=args.docker_image_tag)
       for sanitizer, child_dir in sanitized_binary_directories)
 
 
@@ -1553,7 +1598,8 @@ def reproduce(args):
   """Reproduces a specific test case from a specific project."""
   return reproduce_impl(args.project, args.fuzzer_name, args.valgrind, args.e,
                         args.fuzzer_args, args.testcase_path, args.architecture, 
-                        args.propagate_exit_codes, args.err_result)
+                        args.propagate_exit_codes, args.err_result, 
+                        privileged=args.privileged, timeout=args.timeout)
 
 
 def reproduce_impl(  # pylint: disable=too-many-arguments
@@ -1566,7 +1612,9 @@ def reproduce_impl(  # pylint: disable=too-many-arguments
     architecture='x86_64',
     propagate_exit_codes=False,
     err_result=1,
-    run_function=docker_run):
+    run_function=docker_run,
+    privileged=True,
+    timeout=None):
   """Reproduces a testcase in the container."""
 
   if not check_project_exists(project):
@@ -1601,7 +1649,7 @@ def reproduce_impl(  # pylint: disable=too-many-arguments
       '-runs=100',
   ] + fuzzer_args
 
-  return run_function(run_args, architecture=architecture, propagate_exit_codes=propagate_exit_codes)
+  return run_function(run_args, architecture=architecture, propagate_exit_codes=propagate_exit_codes, privileged=privileged, timeout=timeout)
 
 
 def _validate_project_name(project_name):
@@ -1722,7 +1770,7 @@ def shell(args):
     out_dir = _get_out_dir()
   else:
     image_project = 'aixcc-afc'
-    project_full = '%s/%s' % (image_project, args.project.name)
+    project_full = '%s/%s:%s' % (image_project, args.project.name, args.docker_image_tag)
     out_dir = args.project.out
 
   run_args = _env_to_docker_args(env)

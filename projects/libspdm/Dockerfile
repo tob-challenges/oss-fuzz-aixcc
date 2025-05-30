@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 #ENV http_proxy 'http://proxy.example.com:80/'
 #ENV https_proxy 'https://proxy.example.com:80/'
 RUN apt-get update && apt-get install -y make autoconf automake libtool

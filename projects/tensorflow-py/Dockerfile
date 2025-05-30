@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
@@ -32,7 +32,7 @@ RUN ln -s /usr/local/bin/python3 /usr/local/bin/python
 
 # Install Bazelisk to keep bazel in sync with the version required by TensorFlow
 RUN curl -Lo /usr/bin/bazel \
-        https://github.com/bazelbuild/bazelisk/releases/download/v1.1.0/bazelisk-linux-amd64 \
+        https://github.com/bazelbuild/bazelisk/releases/download/v1.2.0/bazelisk-linux-amd64 \
         && \
     chmod +x /usr/bin/bazel
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y cmake yasm wget
 RUN git clone https://aomedia.googlesource.com/aom
 ADD https://storage.googleapis.com/aom-test-data/fuzzer/dec_fuzzer_seed_corpus.zip $SRC/

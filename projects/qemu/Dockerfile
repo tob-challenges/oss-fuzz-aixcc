@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 ARG glib_tag=2.78.4
 RUN apt-get update && apt-get install -y make autoconf automake libtool ninja-build  \
     libfdt-dev libpixman-1-dev zlib1g-dev libslirp-dev patchelf wget \

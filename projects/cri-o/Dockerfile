@@ -14,8 +14,8 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.1.0
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.1.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
 RUN apt-get update && apt-get install -y libaio-dev autoconf gettext texinfo \
 	libbtrfs-dev git libassuan-dev libdevmapper-dev libglib2.0-dev libc6-dev \
 	libgpgme-dev libgpg-error-dev libseccomp-dev libsystemd-dev libselinux1-dev \
