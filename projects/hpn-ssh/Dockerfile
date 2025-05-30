@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN apt-get install -y libz-dev libssl1.1 libssl-dev libedit-dev zip libpkcs11
 RUN git clone https://github.com/rapier1/hpn-ssh

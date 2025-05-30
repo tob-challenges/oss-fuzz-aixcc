@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN mkdir -p /opt/oracle
 RUN cd /opt/oracle && \
     wget https://download.oracle.com/otn_software/linux/instantclient/216000/instantclient-basic-linux.x64-21.6.0.0.0dbru.zip && \

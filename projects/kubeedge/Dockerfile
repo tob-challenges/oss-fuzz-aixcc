@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
 RUN git clone --depth 1 https://github.com/kubeedge/kubeedge
 RUN git clone --depth 1 https://github.com/cncf/cncf-fuzzing
 COPY build.sh $SRC/

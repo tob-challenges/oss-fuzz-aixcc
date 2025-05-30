@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool libomp-dev
 RUN pip3 install --upgrade pip setuptools
 RUN pip3 install \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN git clone https://github.com/ipython/ipython
 WORKDIR $SRC
 COPY build.sh fuzz_* $SRC/

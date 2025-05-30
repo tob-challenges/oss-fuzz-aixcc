@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
 
 RUN apt-get update && apt-get install -y protobuf-compiler libprotobuf-dev binutils cmake \
    ninja-build liblzma-dev libz-dev pkg-config autoconf libtool

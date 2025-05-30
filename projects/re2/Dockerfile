@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update -y && apt-get install -y cmake make pkg-config
 
 # https://github.com/abseil/abseil-cpp/issues/1524#issuecomment-1739364093

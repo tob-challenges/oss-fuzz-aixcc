@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt install -y g++-multilib git python curl
 
 RUN git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git

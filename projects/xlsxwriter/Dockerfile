@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN pip3 install --upgrade pip
 RUN git clone --depth 1 https://github.com/jmcnamara/XlsxWriter.git XlsxWriter \
         && cp XlsxWriter/dev/fuzzing/build.sh $SRC/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
 RUN git clone https://github.com/grpc/grpc-go
 
 RUN git clone --depth 1 https://github.com/grpc/grpc-go $GOPATH/src/google.golang.org/grpc

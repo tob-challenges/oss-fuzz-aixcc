@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN pip3 install --upgrade pip
 RUN git clone https://github.com/derek73/python-nameparser python-nameparser
 COPY *.sh *py $SRC/

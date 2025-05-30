@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install --yes cmake ninja-build
 RUN curl -L http://ftp.gnu.org/pub/gnu/gperf/gperf-3.1.tar.gz -O
 RUN git clone --depth 1 --branch=dev git://code.qt.io/qt/qtbase.git

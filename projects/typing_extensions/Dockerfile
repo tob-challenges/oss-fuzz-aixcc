@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN pip3 install --upgrade pip
 RUN git clone https://github.com/python/typing_extensions typing_extensions
 COPY *.sh *py $SRC/

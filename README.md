@@ -1,6 +1,6 @@
-# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.2.0-rc1)
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.2.0)
 
-Changes in v1.2.0 (rc1):
+Changes in v1.2.0:
 
 - `base-builder-jvm` has been updated to use the lastest aixcc-jazzer ref, adjusting the OsCmdInjection sanitizer.
     - This adjustment adds some safety measures around OsCmdInjection to reduce risk and reduce potential 
@@ -29,9 +29,15 @@ thus competition challenges will reflect realistic real-world repositories.
 in this repository. The list of projects in the projects directory does
 not reflect which projects will be used in any AFC round.***
 
-Competitors are recommended to test their CRS against public repositories
-using this competition fork. Competitors are recommended to use the following
-commands to build and run harnesses.
+Competitors are recommended to test their CRS against public repositories using this competition fork. 
+Competitors are recommended to view the [example-crs-architecture] repository's
+[example-challenge-evaluation] scripts to see details on how this fuzz tooling is used during competition.
+
+[example-crs-arhictecture]: https://github.com/aixcc-finals/example-crs-architecture
+[example-challenge-evaluation]: https://github.com/aixcc-finals/example-crs-architecture/tree/main/example-challenge-evaluation
+
+Example basic usage of the helper script is below. **Note: When working with local source, you  must pass the local 
+source repository into the scripts as detailed below.**
 
 ```bash
 # Build the project image and pull AFC base images

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 
 RUN apt-get update && \
    apt-get install -y make autoconf automake libtool build-essential pkg-config bison flex patchelf \

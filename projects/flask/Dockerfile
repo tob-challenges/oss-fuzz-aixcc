@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
 RUN apt-get update && apt-get install -y libffi-dev
 RUN python3 -m pip install --upgrade pip
 RUN git clone https://github.com/pallets/flask

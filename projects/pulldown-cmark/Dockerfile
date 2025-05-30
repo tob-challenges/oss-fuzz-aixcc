@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
 
 RUN git clone --depth 1 https://github.com/pulldown-cmark/pulldown-cmark pulldown-cmark
 WORKDIR $SRC

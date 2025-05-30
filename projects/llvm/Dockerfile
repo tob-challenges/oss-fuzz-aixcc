@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update -y && \
     apt-get install -y autoconf automake libtool curl make g++ unzip wget git \
     binutils liblzma-dev libz-dev python-all cmake ninja-build subversion \

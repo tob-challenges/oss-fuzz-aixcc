@@ -12,7 +12,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update -y && \
     apt-get install -y make autoconf automake libtool wget zlib1g-dev \
     binutils cmake subversion ninja-build liblzma-dev libz-dev pkg-config

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update -y && apt-get install -y curl wget \
     binutils cmake ninja-build liblzma-dev libz-dev pkg-config autoconf libtool
 RUN git clone --depth 1 https://github.com/open-source-parsers/jsoncpp

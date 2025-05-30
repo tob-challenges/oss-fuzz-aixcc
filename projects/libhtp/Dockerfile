@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool zlib1g-dev liblzma-dev
 RUN git clone --depth 1 https://github.com/OISF/libhtp.git libhtp
 RUN git clone --branch main --depth 1 https://github.com/catenacyber/libhtp-rs.git libhtp-rs

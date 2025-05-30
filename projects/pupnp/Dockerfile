@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && apt-get install -y cmake
 RUN git clone https://github.com/pupnp/pupnp
 RUN git clone https://github.com/pkillarjun/oss-fuzz-bloat

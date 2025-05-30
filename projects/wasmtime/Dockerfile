@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool curl \
   cmake python llvm-dev libclang-dev clang \
   libgmp-dev pkg-config

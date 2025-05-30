@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
 RUN apt-get update && \
     apt-get install -y make autoconf automake groff libtool pkg-config cmake nasm autopoint
 RUN git clone --depth 1 https://github.com/imagemagick/imagemagick
