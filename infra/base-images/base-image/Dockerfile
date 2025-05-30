@@ -24,6 +24,12 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install tzadata to match ClusterFuzz
 # (https://github.com/google/oss-fuzz/issues/9280).
 
+# Use Azure mirrors for consistent apt repository access.
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.backup && \
+    sed -i 's|http://archive.ubuntu.com/ubuntu/|http://azure.archive.ubuntu.com/ubuntu/|g' /etc/apt/sources.list && \
+    sed -i 's|http://security.ubuntu.com/ubuntu/|http://azure.archive.ubuntu.com/ubuntu/|g' /etc/apt/sources.list
+
+
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y libc6-dev binutils libgcc-9-dev tzdata locales locales-all && \
