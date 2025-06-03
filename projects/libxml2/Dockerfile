@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 ARG TARGETPLATFORM
 
 RUN apt-get update && \

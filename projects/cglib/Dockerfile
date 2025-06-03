@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
 
 ENV JAVA_HOME $JAVA_15_HOME
 ENV JVM_LD_LIBRARY_PATH $JAVA_HOME/lib/server

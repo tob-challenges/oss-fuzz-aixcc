@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 # ! Project pinned after a clang update and an afl link error. Log: https://oss-fuzz-gcb-logs.storage.googleapis.com/log-bca72181-cfb2-4b2f-98f1-c2addee0aa4b.txt
 RUN apt-get update && apt-get install -y make autoconf automake libtool wget python bison flex texinfo lzip bsdmainutils
 RUN git clone --depth 1 --branch cryptofuzz https://github.com/libecc/libecc.git

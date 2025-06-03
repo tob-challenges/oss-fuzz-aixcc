@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 RUN git clone --depth 1 https://github.com/vitessio/vitess
 RUN git clone --depth 1 https://github.com/cncf/cncf-fuzzing
 COPY build.sh $SRC/

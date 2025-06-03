@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 RUN git clone --depth 1 --branch v2 https://github.com/russross/blackfriday
 COPY build.sh render_fuzzer.go $SRC/
 WORKDIR $SRC/blackfriday

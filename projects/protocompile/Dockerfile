@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 RUN git clone --depth 1 https://github.com/bufbuild/protocompile
 
 COPY fuzz_protocompile.go $SRC/protocompile

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN pip3 install --upgrade pip
 RUN git clone https://github.com/AzureAD/microsoft-authentication-library-for-python msal
 WORKDIR msal

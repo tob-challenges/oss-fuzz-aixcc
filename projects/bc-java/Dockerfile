@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
 
 RUN wget https://services.gradle.org/distributions/gradle-7.4.2-bin.zip -O gradle.zip && \
     unzip gradle.zip -d $SRC/gradle && \

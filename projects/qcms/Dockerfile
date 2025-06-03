@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 RUN apt-get update && apt-get install -y mercurial
 RUN hg clone --uncompressed https://hg.mozilla.org/mozilla-central/
 COPY build.sh $SRC/

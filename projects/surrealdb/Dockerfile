@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 RUN git clone --depth 1 https://github.com/surrealdb/surrealdb surrealdb
 RUN git clone --depth 1 https://github.com/surrealdb/docs.surrealdb.com.git surrealdb_website
 WORKDIR surrealdb

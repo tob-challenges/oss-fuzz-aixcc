@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 RUN apt-get update && apt-get install -y wget
 RUN wget https://raw.githubusercontent.com/google/AFL/master/dictionaries/json.dict -O $OUT/fuzz.dict
 

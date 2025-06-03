@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y libpcre2-dev libssl-dev libsystemd-dev autoconf libtool
 RUN git clone https://github.com/wazuh/wazuh
 

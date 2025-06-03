@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 RUN git clone https://github.com/dragonflyoss/Dragonfly
 COPY build.sh $SRC/
 WORKDIR $SRC/Dragonfly

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 
 RUN	apt-get update && \
 	apt-get install -y libncursesw5-dev libtinfo5 libtool make pkgconf libidn2-0-dev libsqlite3-dev

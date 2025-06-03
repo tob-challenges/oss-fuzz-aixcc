@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-javascript:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-javascript:v1.2.1
 
 RUN mkdir afl-testcases
 RUN curl https://lcamtuf.coredump.cx/afl/demo/afl_testcases.tgz | tar xzC afl-testcases

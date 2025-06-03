@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 ARG glib_tag=2.78.4
 RUN apt-get update && apt-get install -y \
     make \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y make autoconf automake libtool cmake build-essential pkg-config libgoogle-perftools-dev
 RUN git clone --depth 1 https://github.com/google/sentencepiece.git sentencepiece
 WORKDIR sentencepiece

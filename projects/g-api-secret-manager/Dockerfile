@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN pip3 install --upgrade pip && pip install google-api-core google-cloud-core mock
 RUN git clone --depth 1 https://github.com/googleapis/google-cloud-python

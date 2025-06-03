@@ -14,10 +14,10 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 
 # We use compile_go_fuzzer in this set up and also go itself
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 
 RUN apt-get update && apt-get install -y libssl-dev pkg-config autoconf automake libtool bison flex wget make \
     autoconf \

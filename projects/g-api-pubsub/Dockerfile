@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN pip3 install --upgrade pip && pip install google-api-core google-cloud-core
 RUN git clone https://github.com/googleapis/python-pubsub
 COPY build.sh *.py $SRC/

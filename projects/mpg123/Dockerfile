@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y make autoconf automake libtool wget \
   bzip2
 RUN wget https://www.mpg123.de/snapshot

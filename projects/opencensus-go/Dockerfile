@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 RUN git clone --depth=1 https://github.com/census-instrumentation/opencensus-go
 COPY build.sh fuzz_test.go $SRC/
 WORKDIR $SRC/opencensus-go

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 https://github.com/nucleic/kiwi kiwi
 WORKDIR kiwi

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y cmake
 # fallback to github if main git server is not responding
 RUN git clone --depth 1 https://git.osgeo.org/gitea/geos/geos.git || git clone --depth 1 https://github.com/libgeos/geos.git

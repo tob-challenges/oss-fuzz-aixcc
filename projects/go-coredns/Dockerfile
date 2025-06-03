@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 ENV GO111MODULE=on
 RUN git clone --depth 1  https://github.com/coredns/coredns $GOPATH/src/github.com/coredns/coredns
 

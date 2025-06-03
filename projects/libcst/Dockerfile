@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN git clone https://github.com/instagram/libcst libcst
 RUN apt-get install build-essential libssl-dev libffi-dev pkg-config python3-dev cargo -y
 RUN pip3 install --upgrade pip

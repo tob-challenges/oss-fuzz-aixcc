@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 
 RUN git clone --depth 1 https://github.com/chronotope/chrono chrono
 WORKDIR $SRC

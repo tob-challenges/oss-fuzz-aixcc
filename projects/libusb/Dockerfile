@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y make autoconf automake libtool libudev-dev libumockdev-dev
 RUN git clone --depth 1 https://github.com/libusb/libusb libusb
 WORKDIR libusb

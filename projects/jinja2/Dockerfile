@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade build
 RUN git clone https://github.com/pallets/jinja

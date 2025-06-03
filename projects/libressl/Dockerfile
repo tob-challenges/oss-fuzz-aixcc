@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 # ! Project pinned after a clang update and an afl link error. Log: https://oss-fuzz-gcb-logs.storage.googleapis.com/log-db180642-1ff0-4223-91e6-3bf060adb174.txt
 
 RUN apt-get update && apt-get install -y make cmake wget autoconf automake libtool bison flex texinfo lzip

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 
 # Packages taken from:
 # * https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#dependency-build-instructions

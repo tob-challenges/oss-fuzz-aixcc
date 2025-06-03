@@ -19,7 +19,7 @@
 ################################################################################
 # Defines a docker image that can build cras fuzzers.
 #
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 
 RUN apt-get -y update && \
       apt-get install -y \

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y nasm pkg-config gperf zip rsync && pip3 install meson ninja
 RUN git clone --depth 1 https://github.com/mpv-player/mpv mpv
 RUN git clone --depth 1 https://github.com/FFmpeg/FFmpeg ffmpeg

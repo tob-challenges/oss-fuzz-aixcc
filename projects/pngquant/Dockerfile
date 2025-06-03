@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y make libpng-dev autoconf libtool
 RUN git clone --depth 1 https://github.com/kornelski/pngquant
 RUN git clone --depth 1 https://github.com/glennrp/libpng.git $SRC/pngquant/libpng

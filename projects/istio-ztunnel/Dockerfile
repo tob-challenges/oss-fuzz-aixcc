@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 RUN apt-get --yes update \
    && apt-get install --no-install-recommends --yes \
    librust-clang-sys-dev \

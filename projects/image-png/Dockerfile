@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 RUN apt-get update && apt-get install -y make autoconf automake libtool curl cmake python llvm-dev libclang-dev clang
 
 RUN git clone https://github.com/image-rs/image-png

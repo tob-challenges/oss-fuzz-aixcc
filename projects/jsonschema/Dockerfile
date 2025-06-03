@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
 RUN pip3 install --upgrade pip hypothesis rpds
 
 RUN git clone --depth=1 https://github.com/Julian/jsonschema

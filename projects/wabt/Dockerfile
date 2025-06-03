@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y cmake libtool make python
 RUN git clone --recursive https://github.com/WebAssembly/wabt
 WORKDIR wabt

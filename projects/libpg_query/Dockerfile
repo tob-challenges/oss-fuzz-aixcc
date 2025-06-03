@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN git clone --depth 1 https://github.com/pganalyze/libpg_query libpg_query
 WORKDIR libpg_query
 COPY build.sh $SRC/

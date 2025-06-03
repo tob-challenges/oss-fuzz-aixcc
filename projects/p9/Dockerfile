@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
 MAINTAINER s@sevki.org
 
 RUN git clone --depth 1 https://github.com/hugelgupf/p9

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update
 RUN apt-get install -y make libtool libssl-dev libexpat-dev wget flex bison
 RUN git clone --depth=1 https://github.com/NLnetLabs/unbound unbound

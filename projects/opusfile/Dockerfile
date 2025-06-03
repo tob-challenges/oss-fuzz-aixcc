@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y autoconf automake git libogg0 libogg-dev libopus0 libopus-dev libssl-dev libtool make pkg-config
 RUN git clone --depth 1 https://gitlab.xiph.org/xiph/opusfile
 WORKDIR opusfile

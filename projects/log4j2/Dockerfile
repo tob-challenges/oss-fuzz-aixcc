@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
 
 # Install Java 17 using Azul Zulu distribution, because
 #

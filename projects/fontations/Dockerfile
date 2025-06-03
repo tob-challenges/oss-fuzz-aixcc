@@ -16,7 +16,7 @@
 
 # Based on https://google.github.io/oss-fuzz/getting-started/new-project-guide/rust-lang/
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
 
 RUN git clone --depth 1 https://github.com/googlefonts/fontations
 WORKDIR $SRC/fontations

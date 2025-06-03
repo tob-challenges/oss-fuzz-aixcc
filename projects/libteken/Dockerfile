@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y pmake
 RUN svn co https://svn.freebsd.org/base/head/sys/teken libteken
 WORKDIR libteken

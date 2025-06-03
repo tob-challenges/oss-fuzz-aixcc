@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt update && apt install -y python3
 RUN git clone --depth 1 https://github.com/jarro2783/cxxopts.git cxxopts
 WORKDIR cxxopts

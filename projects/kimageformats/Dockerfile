@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.0
+FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install --yes cmake make autoconf automake autopoint libtool wget po4a ninja-build pkgconf
 RUN git clone --depth 1 https://github.com/madler/zlib.git
 RUN git clone --depth 1 -b v1.5.6 https://github.com/facebook/zstd.git
