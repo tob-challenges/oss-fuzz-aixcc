@@ -1,3 +1,2 @@
 [libfuzzer]
-dict = sql.dict
 timeout_exitcode=0
