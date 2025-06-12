@@ -1,10 +1,5 @@
 homepage: "https://curl.haxx.se/"
-language: c++
-primary_contact: "daniel@haxx.se"
-auto_ccs:
-  - "daniel.haxx@gmail.com"
-  - "cmeister2@gmail.com"
-  - "stefan.eissing@gmail.com"
+language: c
 sanitizers:
   - address
   - undefined
@@ -15,5 +10,4 @@ fuzzing_engines:
   - libfuzzer
 architectures:
   - x86_64
-  - i386
 main_repo: 'https://github.com/curl/curl.git'
