@@ -15,6 +15,8 @@
 #
 ################################################################################
 
+# Remove bld directory if exists. Otherwise, we will see an error when building after the first time.
+rm -rf bld/
 mkdir bld
 cd bld
 
@@ -27,11 +29,20 @@ export CFLAGS="$CFLAGS -DSQLITE_MAX_LENGTH=128000000 \
                -DSQLITE_MAX_MEMORY=25000000 \
                -DSQLITE_PRINTF_PRECISION_LIMIT=1048576 \
                -DSQLITE_DEBUG=1 \
-               -DSQLITE_MAX_PAGE_COUNT=16384"             
+               -DSQLITE_MAX_PAGE_COUNT=16384 \
+               -DSQLITE_HAVE_ZLIB=1 \
+	             -DSQLITE_ENABLE_LSM"  
+
                
 ../configure --shared=0
 make -j$(nproc)
 make sqlite3.c
+
+# Copy shell.c and rename function 'main' for custom harness
+cp shell.c $SRC/sqlite3/test/
+old_proto="int SQLITE_CDECL main("
+new_proto="int SQLITE_CDECL shell_main("
+sed -i "s/$old_proto/$new_proto/g" $SRC/sqlite3/test/shell.c
 
 $CC $CFLAGS -I. -c \
     $SRC/sqlite3/test/ossfuzz.c -o $SRC/sqlite3/test/ossfuzz.o
@@ -39,5 +50,18 @@ $CC $CFLAGS -I. -c \
 $CXX $CXXFLAGS \
     $SRC/sqlite3/test/ossfuzz.o -o $OUT/ossfuzz \
     $LIB_FUZZING_ENGINE ./sqlite3.o
+
+
+$CC $CFLAGS -I. -c \
+    $SRC/sqlite3/test/customfuzz3.c -o $SRC/sqlite3/test/customfuzz3.o
+
+
+$CC $CFLAGS -I. -c \
+    $SRC/sqlite3/test/shell.c -o $SRC/sqlite3/test/shell.o
+
+
+$CXX $CXXFLAGS -lz \
+    $SRC/sqlite3/test/customfuzz3.o -o $OUT/customfuzz3 \
+    $LIB_FUZZING_ENGINE ./sqlite3.o $SRC/sqlite3/test/shell.o
 
 cp $SRC/*.options $SRC/*.dict $SRC/*.zip $OUT/
