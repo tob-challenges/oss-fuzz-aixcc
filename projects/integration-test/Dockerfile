@@ -6,5 +6,5 @@ COPY pkgs/integration-test.tar.gz $SRC/
 RUN tar -xzf $SRC/integration-test.tar.gz && rm $SRC/integration-test.tar.gz
 
 COPY build.sh $SRC/
-COPY fuzz_* $SRC/
+COPY fuzz_* *.options $SRC/
 WORKDIR $SRC/integration-test
