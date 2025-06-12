@@ -18,7 +18,14 @@ FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && \
     apt-get install -y make autoconf automake libtool zlib1g-dev
 
-RUN git clone --depth 1 https://github.com/madler/zlib.git
-RUN git clone --depth 1 https://github.com/pnggroup/libpng.git
+#RUN git clone --depth 1 https://github.com/madler/zlib.git
+#RUN git clone --depth 1 https://github.com/pnggroup/libpng.git
+
+WORKDIR $SRC
+COPY pkgs/zlib.tar.gz $SRC/zlib.tar.gz
+COPY pkgs/libpng.tar.gz $SRC/libpng.tar.gz
+RUN tar -zxf $SRC/zlib.tar.gz && rm $SRC/zlib.tar.gz
+RUN tar -zxf $SRC/libpng.tar.gz && rm $SRC/libpng.tar.gz
+
 RUN cp libpng/contrib/oss-fuzz/build.sh $SRC
 WORKDIR libpng

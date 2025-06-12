@@ -1,0 +1,2 @@
+libpng_read_fuzzer.options is set in its source
+copied in contrib/oss-fuzz/build.sh
