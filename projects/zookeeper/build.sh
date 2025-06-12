@@ -28,16 +28,19 @@ CURRENT_VERSION=$($MVN org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluate
  -Dexpression=project.version -q -DforceStdout)
 find ./zookeeper-server -name "zookeeper-$CURRENT_VERSION.jar" -exec mv {} $OUT/zookeeper.jar \;
 
-ALL_JARS="zookeeper.jar"
+ALL_JARS="$OUT/zookeeper.jar:$OUT/metrics-core.jar:$OUT/logback.xml"
+RUNTIME_JARS="\$this_dir/zookeeper.jar:\$this_dir/metrics-core.jar:\$this_dir/logback.xml"
 
 # The classpath at build-time includes the project jars in $OUT as well as the
 # Jazzer API.
-BUILD_CLASSPATH=$(echo $ALL_JARS | xargs printf -- "$OUT/%s:"):$JAZZER_API_PATH
+BUILD_CLASSPATH=$ALL_JARS:$JAZZER_API_PATH
 
 # All .jar and .class files lie in the same directory as the fuzzer at runtime.
-RUNTIME_CLASSPATH=$(echo $ALL_JARS | xargs printf -- "\$this_dir/%s:"):\$this_dir
+RUNTIME_CLASSPATH=$RUNTIME_JARS:\$this_dir
 javac -cp $BUILD_CLASSPATH ${SRC}/*.java
 install ${SRC}/*.class ${OUT}/
+cp ${SRC}/metrics-core.jar ${OUT}/metrics-core.jar
+cp ${SRC}/logback.xml ${OUT}/logback.xml
 
 for fuzzer in $(find $SRC -name '*Fuzzer.java' -maxdepth 1); do
   fuzzer_basename=$(basename -s .java $fuzzer)
@@ -47,9 +50,9 @@ echo "#!/bin/bash
 # LLVMFuzzerTestOneInput for fuzzer detection.
 this_dir=\$(dirname \"\$0\")
 if [[ \"\$@\" =~ (^| )-runs=[0-9]+($| ) ]]; then
-  mem_settings='-Xmx1900m:-Xss900k'
+  mem_settings='-Xmx700m:-Xss900k'
 else
-  mem_settings='-Xmx2048m:-Xss1024k'
+  mem_settings='-Xmx800m:-Xss1024k'
 fi
 JAVA_HOME=\"\$this_dir/open-jdk-17/\" \
 LD_LIBRARY_PATH=\"\$this_dir/open-jdk-17/lib/server\":\$this_dir \
