@@ -15,9 +15,16 @@
 ################################################################################
 
 FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
-RUN apt-get update && apt-get install -y libz-dev autoconf mercurial
-RUN hg clone https://hg.ucc.asn.au/dropbear-fuzzcorpus dropbear-corpus
-RUN git clone https://github.com/mkj/dropbear dropbear
+RUN apt-get update && apt-get install -y libz-dev autoconf 
+#RUN hg clone https://hg.ucc.asn.au/dropbear-fuzzcorpus dropbear-corpus
+#RUN git clone https://github.com/mkj/dropbear dropbear
+
+WORKDIR $SRC
+COPY pkgs/dropbear-corpus.tar.gz $SRC/dropbear-corpus.tar.gz
+COPY pkgs/dropbear.tar.gz $SRC/dropbear.tar.gz
+RUN tar -zxf $SRC/dropbear-corpus.tar.gz && rm $SRC/dropbear-corpus.tar.gz
+RUN tar -zxf $SRC/dropbear.tar.gz && rm $SRC/dropbear.tar.gz
+
 WORKDIR dropbear
 COPY build.sh *.options $SRC/
 

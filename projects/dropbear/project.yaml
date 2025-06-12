@@ -1,5 +1,15 @@
 homepage: "https://matt.ucc.asn.au/dropbear/dropbear.html"
-language: c++
-primary_contact: "matt@ucc.asn.au"
+language: c
+primary_contact: ""
 builds_per_day: 4
 main_repo: "https://github.com/mkj/dropbear"
+architectures:
+  - x86_64
+sanitizers:
+  - address
+  - undefined
+fuzzing_engines:
+  - libfuzzer
+  - afl
+  - honggfuzz
+  - centipede
