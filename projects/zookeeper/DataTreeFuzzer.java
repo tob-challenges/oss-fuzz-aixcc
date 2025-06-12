@@ -38,6 +38,6 @@ public class DataTreeFuzzer {
     catch (org.apache.zookeeper.KeeperException.NoNodeException e) {}
     catch (org.apache.zookeeper.KeeperException.NodeExistsException e) {}
     catch (java.lang.StringIndexOutOfBoundsException e) {}
-    catch (java.lang.NoClassDefFoundError e) {}
+    catch (java.lang.IllegalArgumentException e) {}
   }
 }
