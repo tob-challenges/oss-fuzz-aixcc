@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 
 RUN git clone https://github.com/census-instrumentation/opencensus-python
 COPY build.sh fuzz_* $SRC/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 RUN git clone --depth 1 https://github.com/google/go-containerregistry
 WORKDIR $SRC/go-containerregistry
 COPY build.sh fuzz.go $SRC/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y make libgmp-dev libmpfr-dev
 RUN git clone --depth 1 https://github.com/libigl/libigl
 WORKDIR $SRC/libigl

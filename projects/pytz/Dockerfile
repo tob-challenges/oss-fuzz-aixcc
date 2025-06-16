@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN apt-get update && apt-get install -y python3-distutils libpq-dev python3-wheel
 RUN git clone https://github.com/stub42/pytz
 RUN pip3 install wheel

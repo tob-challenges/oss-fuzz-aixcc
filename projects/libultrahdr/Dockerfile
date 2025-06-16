@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y wget cmake
 RUN git clone https://github.com/google/libultrahdr.git
 COPY build.sh $SRC/

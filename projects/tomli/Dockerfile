@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN git clone --depth=1 https://github.com/hukkinj1/tomli tomli
 RUN git clone --depth=1 https://github.com/hukkin/tomli-w tomli-w
 COPY *.sh $SRC/

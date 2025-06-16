@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0
 
 RUN curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.12.0/bazelisk-linux-amd64 -o /usr/bin/bazel && chmod +x /usr/bin/bazel
 

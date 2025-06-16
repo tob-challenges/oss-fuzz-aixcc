@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 RUN git clone --depth 1 https://github.com/notaryproject/notary
 RUN git clone --depth 1 https://github.com/notaryproject/notation-go
 RUN git clone --depth 1 https://github.com/cncf/cncf-fuzzing

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y cmake zlib1g-dev libssl-dev
 
 RUN git clone --depth=1 https://git.libssh.org/projects/libssh.git

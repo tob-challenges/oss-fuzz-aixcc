@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0
 
 RUN rm -rf $SRC/project-parent/jxls
 RUN git clone --depth 1 https://github.com/jxlsteam/jxls $SRC/jxls

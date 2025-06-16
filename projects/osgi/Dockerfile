@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0
 
 WORKDIR ${SRC}
 #

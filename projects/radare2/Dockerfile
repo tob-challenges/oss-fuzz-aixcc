@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update
 RUN apt-get install -y pkg-config wget
 RUN git clone https://github.com/radareorg/radare2 radare2

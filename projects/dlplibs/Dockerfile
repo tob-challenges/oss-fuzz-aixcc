@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 # install build requirements
 RUN apt-get update && \
     apt-get install -y wget xz-utils autoconf automake libtool pkg-config \

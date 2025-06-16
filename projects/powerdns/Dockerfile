@@ -15,7 +15,7 @@
 ################################################################################
 
 # base image with clang toolchain
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 
 # install required packages to build your project
 RUN apt-get update && apt-get install -y autoconf automake bison dh-autoreconf flex libluajit-5.1-dev libedit-dev libprotobuf-dev libssl-dev libtool make pkg-config protobuf-compiler ragel

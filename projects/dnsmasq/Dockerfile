@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 git://thekelleys.org.uk/dnsmasq.git dnsmasq    
 WORKDIR dnsmasq

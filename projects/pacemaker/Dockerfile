@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool \
   pkg-config cmake nasm autopoint gettext python3 libqb-dev libbz2-dev \
   libglib2.0-dev corosync libgnutls28-dev libcfg-dev libcpg-dev libcmap-dev \

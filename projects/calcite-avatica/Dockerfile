@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0
 RUN git clone --depth 1 https://github.com/apache/calcite-avatica calcite-avatica
 COPY *.sh *.java $SRC/
 WORKDIR $SRC/calcite-avatica

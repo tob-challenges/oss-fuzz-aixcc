@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN git clone git://sourceware.org/git/bzip2.git
 RUN git clone git://sourceware.org/git/bzip2-tests.git
 COPY build.sh *.c $SRC/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN git clone --depth 1 https://github.com/brianmario/yajl-ruby
 WORKDIR yajl-ruby
 COPY json_fuzzer.c $SRC/yajl-ruby/fuzz/

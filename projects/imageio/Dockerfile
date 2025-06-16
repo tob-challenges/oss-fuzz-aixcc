@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN apt update && apt-get install -y zlib1g-dev libjpeg8-dev
 RUN pip3 install cython numpy
 

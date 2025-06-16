@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 
 ENV PROJECT_ROOT="${GOPATH:-/root/go}/src/github.com/openyurtio"
 

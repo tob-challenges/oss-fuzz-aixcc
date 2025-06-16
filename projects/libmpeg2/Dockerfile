@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y wget cmake
 RUN git clone https://github.com/ittiam-systems/libmpeg2.git
 ADD https://storage.googleapis.com/android_media/external/libmpeg2/fuzzer/mpeg2_dec_fuzzer_seed_corpus.zip $SRC/

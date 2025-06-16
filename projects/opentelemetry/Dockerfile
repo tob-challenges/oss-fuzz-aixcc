@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 RUN git clone --depth 1 https://github.com/open-telemetry/opentelemetry-collector
 RUN git clone --depth=1 --branch=include-all-test-files https://github.com/AdamKorcz/go-118-fuzz-build $SRC/go-118-fuzz-build
 RUN git clone --depth=1 https://github.com/dvyukov/go-fuzz-corpus

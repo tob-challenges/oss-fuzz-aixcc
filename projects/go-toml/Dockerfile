@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 RUN git clone --depth 1 --single-branch --branch v2 https://github.com/pelletier/go-toml go-toml
 COPY build.sh $SRC/

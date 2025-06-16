@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 RUN git clone --depth 1 https://github.com/uber-go/atomic
 WORKDIR $SRC/atomic
 COPY build.sh fuzz_test.go $SRC/

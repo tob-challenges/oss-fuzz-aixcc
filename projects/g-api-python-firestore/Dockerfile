@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN pip3 install --upgrade pip && pip3 install mock
 RUN git clone https://github.com/googleapis/python-firestore
 COPY build.sh *.py $SRC/

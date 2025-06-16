@@ -14,6 +14,6 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN git clone --depth 1 https://github.com/abseil/abseil-cpp.git
 COPY BUILD WORKSPACE build.sh *_fuzzer.cc $SRC/

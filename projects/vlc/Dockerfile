@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y make autoconf automake libtool \
   pkg-config cmake flex bison gettext libglu1-mesa-dev ninja-build
 RUN git clone --depth 1 https://code.videolan.org/videolan/vlc.git vlc

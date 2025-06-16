@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages git make texinfo
 RUN git clone --depth 1 https://github.com/tytso/e2fsprogs
 

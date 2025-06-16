@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y autoconf libtool-bin pkg-config libssl-dev zlib1g-dev
 RUN git clone https://github.com/pjsip/pjproject pjsip
 COPY build.sh $SRC/

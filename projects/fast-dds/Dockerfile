@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt install -y autoconf automake pkg-config
 RUN git clone --depth 1 https://github.com/leethomason/tinyxml2
 RUN git clone --depth 1 --branch asio-1-18-1 https://github.com/chriskohlhoff/asio/

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y python3-pip python-setuptools bridge-utils \
   libglib2.0-dev libdbus-1-dev libudev-dev \
   libical-dev libreadline-dev udev \
