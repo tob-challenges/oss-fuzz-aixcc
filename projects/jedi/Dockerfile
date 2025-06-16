@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 RUN pip3 install --upgrade pip
 RUN git clone --recurse-submodules https://github.com/davidhalter/jedi jedi
 COPY *.sh *py $SRC/

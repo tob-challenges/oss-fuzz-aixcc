@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
 MAINTAINER william@influxdata.com
 RUN git clone https://github.com/influxdata/influxdb.git
 RUN git clone https://github.com/dgrijalva/jwt-go.git

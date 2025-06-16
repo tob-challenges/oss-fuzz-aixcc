@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-ruby:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-ruby:v1.3.0-rc1
 
 RUN git clone --depth 1 --single-branch https://github.com/ohler55/ox.git $SRC/ox-ruby
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN apt-get update && apt-get install -y make cmake python-six wget
 # We need libmbedtls > 2.5.1 otherwise it does not include the lib for static linking
 RUN wget https://open62541.org/libmbedtls/libmbedtls-dev_2.6.0-1_amd64.deb && \

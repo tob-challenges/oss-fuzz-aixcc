@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN git clone --depth 1 https://github.com/nginx/unit.git
 RUN cp $SRC/unit/fuzzing/oss-fuzz.sh $SRC/build.sh
 WORKDIR $SRC/unit/

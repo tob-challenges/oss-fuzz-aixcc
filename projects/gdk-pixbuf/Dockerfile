@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN apt-get update && apt-get install -y ffmpeg python3-pip gtk-doc-tools libffi-dev
 RUN pip3 install meson==0.55.3 ninja
 

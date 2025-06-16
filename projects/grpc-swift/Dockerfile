@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-swift:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-swift:v1.3.0-rc1
 
 # specific to project
 RUN apt-get update && apt-get install -y zlib1g-dev

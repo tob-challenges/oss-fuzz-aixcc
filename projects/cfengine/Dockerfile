@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN apt-get update && apt-get install -y \
   build-essential libpcre2-dev libtool autoconf automake bison flex libssl-dev \
   libbison-dev libacl1 libacl1-dev lmdb-utils liblmdb-dev libpam0g-dev libtool \

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0-rc1
 
 RUN apt-get update && apt-get install -y locales
 RUN locale-gen en_US.UTF-8

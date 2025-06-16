@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 
 RUN apt-get update && \
     apt-get install -y python-is-python3 build-essential \

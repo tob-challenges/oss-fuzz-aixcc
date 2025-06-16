@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 RUN pip3 install --upgrade pip
 RUN git clone --depth 1 https://github.com/scrapinghub/dateparser.git dateparser \
         && cp dateparser/fuzzing/build.sh $SRC/ \

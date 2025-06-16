@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.3.0-rc1
 # ! Project pinned after a clang update and an afl link error. Log: https://oss-fuzz-gcb-logs.storage.googleapis.com/log-8bc8a5ea-9bfb-421d-bfe9-911828e88741.txt
 
 RUN apt-get update && \

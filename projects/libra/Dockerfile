@@ -15,7 +15,7 @@
 ################################################################################
 
 # google oss-fuzz stuff
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.3.0-rc1
 
 # install other tools we might need
 RUN apt-get update && apt-get install -y cmake curl

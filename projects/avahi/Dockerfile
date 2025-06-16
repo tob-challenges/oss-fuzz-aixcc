@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN git clone --depth 1 https://github.com/avahi/avahi
 WORKDIR avahi
 COPY build.sh $SRC/

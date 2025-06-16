@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 
 # Log4cxx build dependencies: https://logging.apache.org/log4cxx/latest_stable/build-cmake.html
 RUN apt-get update && apt-get install -y build-essential libapr1-dev libaprutil1-dev gzip zip

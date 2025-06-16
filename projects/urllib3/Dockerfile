@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 RUN pip3 install httpretty
 
 RUN git clone --depth 1 https://github.com/urllib3/urllib3

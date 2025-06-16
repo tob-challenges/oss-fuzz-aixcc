@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN apt-get update && apt-get install -y make cmake g++
 RUN git clone --depth 1 https://github.com/uclouvain/openjpeg openjpeg
 # openjpeg-data is used to create a seed corpus

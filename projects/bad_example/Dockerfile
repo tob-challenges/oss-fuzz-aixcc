@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN apt-get update && apt-get install -y make autoconf automake libtool
 
 # Using a real zlib project, but with broken build script and/or fuzz target.

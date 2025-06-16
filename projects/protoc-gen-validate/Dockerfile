@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
 RUN apt-get update && apt-get install -y protobuf-compiler
 RUN git clone --depth 1 https://github.com/bufbuild/protoc-gen-validate
 WORKDIR $SRC/protoc-gen-validate

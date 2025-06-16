@@ -14,6 +14,6 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN git clone --depth 1 https://android.googlesource.com/platform/external/aac/
 COPY build.sh *.cpp $SRC/

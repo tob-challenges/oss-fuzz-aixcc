@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 RUN apt-get update && apt-get install -y cmake ninja-build openssl
 RUN git clone --depth 1 https://github.com/open-quantum-safe/liboqs.git liboqs
 WORKDIR liboqs

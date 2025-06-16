@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
 RUN git clone --depth 1 https://github.com/google/mtail $GOPATH/src/github.com/google/mtail
 WORKDIR $GOPATH/src/github.com/google/mtail
 COPY build.sh $SRC/

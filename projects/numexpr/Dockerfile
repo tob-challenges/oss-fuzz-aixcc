@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 RUN pip3 install --upgrade pip && pip3 install cython
 RUN git clone https://github.com/pydata/numexpr numexpr
 COPY *.sh *py $SRC/

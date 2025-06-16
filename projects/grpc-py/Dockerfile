@@ -15,7 +15,7 @@
 ################################################################################
 
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 
 RUN apt install python3-dev libssl-dev libre2-dev -y
 RUN git clone https://github.com/grpc/grpc grpc && \

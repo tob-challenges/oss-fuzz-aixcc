@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
 
 RUN git clone --depth 1 https://github.com/holiman/uint256.git uint256
 RUN cp uint256/oss-fuzz.sh $SRC/build.sh

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.3.0-rc1
 
 # Clone ttf-parser project
 RUN git clone https://github.com/RazrFalcon/ttf-parser ttf-parser

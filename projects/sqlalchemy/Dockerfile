@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 RUN git clone --depth 1 --branch rel_1_3 https://github.com/sqlalchemy/sqlalchemy
 WORKDIR $SRC/sqlalchemy
 COPY build.sh sqlalchemy_fuzzer.py $SRC/

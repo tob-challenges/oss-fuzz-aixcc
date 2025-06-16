@@ -14,5 +14,5 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0-rc1
 COPY solution.seed vulnerable.cc build.sh $SRC/

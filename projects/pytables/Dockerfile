@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0-rc1
 RUN apt-get install -y pkg-config libblosc-dev libbz2-dev liblzo2-dev \
                        liblzma-dev liblz4-dev libz-dev
 RUN pip3 install --upgrade pip && pip3 install cython packaging python-lzo blosc2

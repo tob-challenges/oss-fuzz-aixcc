@@ -14,8 +14,8 @@
 #
 ################################################################################
 
-#FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+#FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0-rc1
 RUN git clone https://github.com/miekg/dns.git
 
 COPY build.sh $SRC/
