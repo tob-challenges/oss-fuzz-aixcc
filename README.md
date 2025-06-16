@@ -1,8 +1,12 @@
-# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.3.x testing)
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.3.0-rc1)
 
 Changes in v1.3.0:
 
-- ...
+- `helper.py` has added optional, backwards-compatible flags for more detailed evalution.
+    - Adds the optional flag `--propagate_exit_codes` and `--err_result` to the helper
+      commands `build_image`, `build_fuzzers`, and `check_build`. This follows suit with
+      the same flag in `reproduce`, allowing the underlying subprocess exit code to be
+      passed to the caller for greater detail in evaluation and diagnoses.
 
 Changes in v1.2.1:
 
