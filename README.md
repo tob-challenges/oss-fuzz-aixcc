@@ -1,4 +1,4 @@
-# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.3.0-rc1)
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.3.0)
 
 Changes in v1.3.0:
 
