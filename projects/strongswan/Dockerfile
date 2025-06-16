@@ -14,7 +14,7 @@
 #
 ##############################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y automake autoconf libtool pkg-config gettext perl python flex bison gperf lcov libgmp3-dev
 RUN git clone --depth 1 https://github.com/strongswan/strongswan.git strongswan
 RUN git clone --depth 1 https://github.com/strongswan/fuzzing-corpora.git strongswan/fuzzing-corpora

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y make curl yasm autoconf libtool meson nasm
 RUN pip3 install --upgrade pip
 RUN git clone --depth 1 https://github.com/spdk/spdk && \

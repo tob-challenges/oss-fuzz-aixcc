@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 MAINTAINER nareddyt@google.com
 
 RUN apt-get update && apt-get install python -y

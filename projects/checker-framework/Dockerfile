@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0
 
 RUN apt update && apt install -y openjdk-17-jdk
 

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.3.0
 
 RUN curl -L https://download.java.net/openjdk/jdk11.0.0.1/ri/openjdk-11.0.0.1_linux-x64_bin.tar.gz -o jdk.tar.gz && \
     tar zxf jdk.tar.gz && \

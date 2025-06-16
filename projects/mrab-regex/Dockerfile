@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN git clone https://github.com/mrabarnett/mrab-regex mrab-regex
 COPY *.sh *py $SRC/
 WORKDIR $SRC/mrab-regex

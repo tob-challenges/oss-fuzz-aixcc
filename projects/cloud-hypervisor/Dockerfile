@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust as builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-rust as builder:v1.3.0
 
 ## Install build dependencies.
 RUN apt-get update

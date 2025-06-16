@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 ##########################################################################
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN pip3 install --upgrade pip HTMLParser
 RUN git clone https://github.com/benjaminp/six six
 COPY *.sh *py $SRC/

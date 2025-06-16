@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 # ! Project pinned after a clang update and an afl link error. Log: https://oss-fuzz-gcb-logs.storage.googleapis.com/log-e701b6fa-f3a0-414e-ad6e-0223e6d42ebd.txt
 RUN apt-get update && apt-get install -y software-properties-common make autoconf build-essential wget lzip libtool python
 RUN git clone --depth 1 https://git.lysator.liu.se/nettle/nettle

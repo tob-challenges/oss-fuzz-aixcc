@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 LABEL maintainer="codyoss@google.com"
 RUN git clone https://github.com/googleapis/google-cloud-go
 COPY build.sh $SRC/

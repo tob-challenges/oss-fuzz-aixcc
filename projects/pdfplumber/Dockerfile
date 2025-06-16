@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN pip3 install --upgrade pip
 RUN mkdir $SRC/corpus
 

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y pkg-config libglib2.0-dev gyp libsqlite3-dev mercurial python3-pip python
 # Because Ubuntu has really ancient meson out there
 RUN pip3 install meson ninja

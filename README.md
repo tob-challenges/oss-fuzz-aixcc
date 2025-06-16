@@ -1,4 +1,18 @@
-# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.2.0)
+# OSS-Fuzz-AIxCC: AIxCC AFC Competition fork of OSS-Fuzz (v1.3.0-rc1)
+
+Changes in v1.3.0:
+
+- `helper.py` has added optional, backwards-compatible flags for more detailed evalution.
+    - Adds the optional flag `--propagate_exit_codes` and `--err_result` to the helper
+      commands `build_image`, `build_fuzzers`, and `check_build`. This follows suit with
+      the same flag in `reproduce`, allowing the underlying subprocess exit code to be
+      passed to the caller for greater detail in evaluation and diagnoses.
+
+Changes in v1.2.1:
+
+- Adds Azure apt repos to the base-image by @kanno41 in #12
+    - This change is to remediate rate-limiting and scale issues found in recent testing.
+    - This change should allow quicker and higher scaling on concurrent challenge builds.
 
 Changes in v1.2.0:
 

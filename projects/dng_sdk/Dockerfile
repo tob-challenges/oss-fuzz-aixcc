@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install -y wget cmake libjpeg-turbo8-dev zlib1g-dev libxmp-dev
 RUN git clone https://android.googlesource.com/platform/external/dng_sdk/
 

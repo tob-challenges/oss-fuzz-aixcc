@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.3.0
 # Install packages we need to build dependencies
 RUN apt-get update && \
     apt-get install -y \

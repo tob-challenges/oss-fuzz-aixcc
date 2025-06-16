@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN pip3 install --upgrade pip
 RUN git clone --depth 1 https://github.com/life4/textdistance.git textdistance \
         && cp textdistance/fuzzing/build.sh $SRC/

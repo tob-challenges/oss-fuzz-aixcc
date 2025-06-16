@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 # Numpy requires python3.11+
 RUN apt-get update && \
     apt-get install -y software-properties-common && \

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 ################################################################################
-FROM ghcr.io/aixcc-finals/base-builder-rust:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-rust:v1.3.0
 
 RUN git clone https://fuchsia.googlesource.com/fuchsia
 WORKDIR $SRC/fuchsia/src/starnix/lib/third_party/rust_netlink

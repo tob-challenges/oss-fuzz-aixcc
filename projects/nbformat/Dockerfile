@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN pip3 install --upgrade pip && pip3 install cython
 RUN git clone https://github.com/jupyter/nbformat nbformat
 COPY *.sh *py $SRC/

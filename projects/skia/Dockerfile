@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 
 # Mesa,libz/zlib, and xcb needed to build swiftshader
 RUN apt-get update && apt-get install -y python3 wget libglu1-mesa-dev cmake zlib1g-dev libxext-dev libxcb-shm0-dev

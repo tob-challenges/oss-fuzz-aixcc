@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN apt-get update && \
         DEBIAN_FRONTEND=noninteractive apt-get install -y python3.9 python3.9-dev && \
         ln --force -s /usr/bin/python3.9 /usr/local/bin/python3 && \

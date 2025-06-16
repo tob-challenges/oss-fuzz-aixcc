@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder:v1.3.0
 RUN apt-get update && apt-get install --yes cmake mercurial
 RUN git clone https://gitlab.com/libeigen/eigen.git
 WORKDIR eigen

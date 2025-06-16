@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-go:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-go:v1.3.0
 ENV GO111MODULE=on
 RUN git clone https://github.com/prometheus/prometheus $GOPATH/src/github.com/prometheus/prometheus
 COPY build.sh $SRC/

@@ -37,7 +37,7 @@ import templates
 OSS_FUZZ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 BUILD_DIR = os.path.join(OSS_FUZZ_DIR, 'build')
 
-BASE_IMAGE_TAG = ':v1.2.1' # no tag for latest
+BASE_IMAGE_TAG = ':v1.3.0' # built off release/v1.3.x
 
 BASE_RUNNER_IMAGE = f'ghcr.io/aixcc-finals/base-runner{BASE_IMAGE_TAG}'
 
@@ -224,8 +224,12 @@ def main():  # pylint: disable=too-many-branches,too-many-return-statements
     result = generate(args)
   elif args.command == 'build_image':
     result = build_image(args)
+    if args.propagate_exit_codes:
+      return result
   elif args.command == 'build_fuzzers':
     result = build_fuzzers(args)
+    if args.propagate_exit_codes:
+      return result
   elif args.command == 'fuzzbench_build_fuzzers':
     result = fuzzbench_build_fuzzers(args)
   elif args.command == 'fuzzbench_run_fuzzer':
@@ -234,6 +238,8 @@ def main():  # pylint: disable=too-many-branches,too-many-return-statements
     result = fuzzbench_measure(args)
   elif args.command == 'check_build':
     result = check_build(args)
+    if args.propagate_exit_codes:
+      return result
   elif args.command == 'download_corpora':
     result = download_corpora(args)
   elif args.command == 'run_fuzzer':
@@ -325,6 +331,15 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
                                     default='latest',
                                     help='docker image build tag'
                                     'default: latest')
+  build_image_parser.add_argument('--err_result', 
+                                default=1,
+                                help='exit code override for helper.py errors '
+                                '(default err_result = 1).',
+                                type=int)
+  build_image_parser.add_argument('--propagate_exit_codes',
+                                action='store_true',
+                                default=False,
+                                help='return underlying exit codes instead of True/False.')
   _add_external_project_args(build_image_parser)
 
   build_fuzzers_parser = subparsers.add_parser(
@@ -356,6 +371,15 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
                                     default='latest',
                                     help='docker image build tag'
                                     'default: latest')
+  build_fuzzers_parser.add_argument('--err_result', 
+                                    default=1,
+                                    help='exit code override for helper.py errors'
+                                    '(default err_result = 1).',
+                                    type=int)
+  build_fuzzers_parser.add_argument('--propagate_exit_codes',
+                                    action='store_true',
+                                    default=False,
+                                    help='return underlying exit codes instead of True/False.')
   build_fuzzers_parser.set_defaults(clean=False)
 
   fuzzbench_build_fuzzers_parser = subparsers.add_parser(
@@ -377,6 +401,15 @@ def get_parser():  # pylint: disable=too-many-statements,too-many-locals
   check_build_parser.add_argument('fuzzer_name',
                                   help='name of the fuzzer',
                                   nargs='?')
+  check_build_parser.add_argument('--err_result', 
+                                  default=1,
+                                  help='exit code override for helper.py errors'
+                                  '(default err_result = 1).',
+                                  type=int)
+  check_build_parser.add_argument('--propagate_exit_codes',
+                                  action='store_true',
+                                  default=False,
+                                  help='return underlying exit codes instead of True/False.')
   _add_external_project_args(check_build_parser)
 
   run_fuzzer_parser = subparsers.add_parser(
@@ -675,7 +708,9 @@ def _add_environment_args(parser):
 
 def build_image_impl(project, cache=True, pull=False, 
                      architecture='x86_64', 
-                     docker_image_tag='latest'):
+                     docker_image_tag='latest',
+                     err_result=1,
+                     propagate_exit_codes=False):
   """Builds image."""
   image_name = project.name
 
@@ -687,14 +722,14 @@ def build_image_impl(project, cache=True, pull=False,
     image_name = 'ghcr.io/%s/%s%s' % (image_project, image_name, BASE_IMAGE_TAG)
   else:
     if not check_project_exists(project):
-      return False
+      return err_result if propagate_exit_codes else False
     dockerfile_path = project.dockerfile_path
     docker_build_dir = project.path
     image_project = 'aixcc-afc'
     image_name = '%s/%s:%s' % (image_project, image_name, docker_image_tag)
 
   if pull and not pull_images(project.language):
-    return False
+    return err_result if propagate_exit_codes else False
 
   build_args = []
   if architecture == 'aarch64':
@@ -717,7 +752,8 @@ def build_image_impl(project, cache=True, pull=False,
     command = ['docker'] + build_args
     subprocess.check_call(command)
     return True
-  return docker_build(build_args)
+
+  return docker_build(build_args, propagate_exit_codes=propagate_exit_codes)
 
 
 def _env_to_docker_args(env_list):
@@ -802,19 +838,22 @@ def docker_run(run_args, print_output=True, architecture='x86_64', propagate_exi
   return exit_code if propagate_exit_codes else exit_code == 0
 
 
-def docker_build(build_args):
+def docker_build(build_args, propagate_exit_codes=False):
   """Calls `docker build`."""
   command = ['docker', 'build']
   command.extend(build_args)
   logger.info('Running: %s.', _get_command_string(command))
 
+  exit_code = 0
+
   try:
     subprocess.check_call(command)
-  except subprocess.CalledProcessError:
+  except subprocess.CalledProcessError as e:
     logger.error('Docker build failed.')
-    return False
+    print(f'subprocess command returned a non-zero exit status: {e.returncode}')
+    exit_code = e.returncode
 
-  return True
+  return exit_code if propagate_exit_codes else exit_code == 0
 
 
 def docker_pull(image):
@@ -835,7 +874,7 @@ def build_image(args):
   """Builds docker image."""
   if args.pull and args.no_pull:
     logger.error('Incompatible arguments --pull and --no-pull.')
-    return False
+    return args.err_result if args.propagate_exit_codes else False
 
   if args.pull:
     pull = True
@@ -851,14 +890,13 @@ def build_image(args):
     logger.info('Using cached base images...')
 
   # If build_image is called explicitly, don't use cache.
-  if build_image_impl(args.project,
+  return build_image_impl(args.project,
                       cache=args.cache,
                       pull=pull,
                       architecture=args.architecture,
-                      docker_image_tag=args.docker_image_tag):
-    return True
-
-  return False
+                      docker_image_tag=args.docker_image_tag,
+                      err_result=args.err_result,
+                      propagate_exit_codes=args.propagate_exit_codes)
 
 
 def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,too-many-branches
@@ -872,12 +910,14 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
     mount_path=None,
     child_dir='',
     build_project_image=True,
-    docker_image_tag='latest'):
+    docker_image_tag='latest',
+    err_result=1,
+    propagate_exit_codes=False):
   """Builds fuzzers."""
   if build_project_image and not build_image_impl(project,
                                                   architecture=architecture,
                                                   docker_image_tag=docker_image_tag):
-    return False
+    return err_result if propagate_exit_codes else False
 
   docker_image = f'aixcc-afc/{project.name}:{docker_image_tag}'
 
@@ -924,7 +964,7 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
 
     if stateless_path == '/src':
       logger.error('Cannot mount local source targeting "/src".')
-      return False
+      return err_result if propagate_exit_codes else False
 
     command += [
         '-v',
@@ -947,12 +987,12 @@ def build_fuzzers_impl(  # pylint: disable=too-many-arguments,too-many-locals,to
       f'pushd $SRC && rm -rf {stateless_path} && cp -r /local-source-mount {stateless_path} && popd && {default_cmd}'
     ]
 
-  result = docker_run(command, architecture=architecture)
-  if not result:
+  result = docker_run(command, architecture=architecture, propagate_exit_codes=propagate_exit_codes)
+  if not propagate_exit_codes and not result:
     logger.error('Building fuzzers failed.')
     return False
 
-  return True
+  return result
 
 
 def run_clusterfuzzlite(args):
@@ -1035,8 +1075,8 @@ def build_fuzzers(args):
   else:
     # Generally, a fuzzer only needs one sanitized binary in the default dir.
     sanitized_binary_directories = ((args.sanitizer, ''),)
-  return all(
-      build_fuzzers_impl(args.project,
+
+  results = [ build_fuzzers_impl(args.project,
                          args.clean,
                          args.engine,
                          sanitizer,
@@ -1045,8 +1085,14 @@ def build_fuzzers(args):
                          args.source_path,
                          mount_path=args.mount_path,
                          child_dir=child_dir,
-                         docker_image_tag=args.docker_image_tag)
-      for sanitizer, child_dir in sanitized_binary_directories)
+                         docker_image_tag=args.docker_image_tag,
+                         err_result=args.err_result,
+                         propagate_exit_codes=args.propagate_exit_codes)
+          for sanitizer, child_dir in sanitized_binary_directories ]
+  if args.propagate_exit_codes and len(results) != 1:
+    raise ValueError("Cannot build multiple binaries and propagate exit codes.")
+
+  return results[0] if args.propagate_exit_codes else all(results)
 
 
 def fuzzbench_build_fuzzers(args):
@@ -1098,11 +1144,11 @@ def _add_oss_fuzz_ci_if_needed(env):
 def check_build(args):
   """Checks that fuzzers in the container execute without errors."""
   if not check_project_exists(args.project):
-    return False
+    return args.err_result if args.propagate_exit_codes else False
 
   if (args.fuzzer_name and not _check_fuzzer_exists(
       args.project, args.fuzzer_name, args.architecture)):
-    return False
+    return args.err_result if args.propagate_exit_codes else False
 
   env = [
       'FUZZING_ENGINE=' + args.engine,
@@ -1124,8 +1170,10 @@ def check_build(args):
   else:
     run_args.append('test_all.py')
 
-  result = docker_run(run_args, architecture=args.architecture)
-  if result:
+  result = docker_run(run_args, architecture=args.architecture, propagate_exit_codes=args.propagate_exit_codes)
+  if not args.propagate_exit_codes and result:
+    logger.info('Check build passed.')
+  elif args.propagate_exit_codes and result == 0:
     logger.info('Check build passed.')
   else:
     logger.error('Check build failed.')

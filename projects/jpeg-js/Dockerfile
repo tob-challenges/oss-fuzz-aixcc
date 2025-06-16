@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM ghcr.io/aixcc-finals/base-builder-javascript:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-javascript:v1.3.0
 
 COPY build.sh $SRC/
 

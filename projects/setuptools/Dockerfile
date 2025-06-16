@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM ghcr.io/aixcc-finals/base-builder-python:v1.2.1
+FROM ghcr.io/aixcc-finals/base-builder-python:v1.3.0
 RUN git clone --depth 1 --single-branch https://github.com/pypa/setuptools setuptools
 RUN git clone --depth 1 --single-branch https://github.com/pypa/distutils distutils
 RUN python3 -m pip install --upgrade pip \
