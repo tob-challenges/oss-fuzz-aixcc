@@ -16,26 +16,21 @@
 
 FROM ghcr.io/aixcc-finals/base-builder-jvm:v1.2.1
 
-#RUN curl -L https://archive.apache.org/dist/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.zip -o maven.zip && \
-COPY pkgs/maven.zip $SRC/
+RUN curl -L https://archive.apache.org/dist/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.zip -o maven.zip
 RUN unzip $SRC/maven.zip -d $SRC/maven && \
     rm -rf maven.zip
 
 ENV MVN $SRC/maven/apache-maven-3.9.5/bin/mvn
 
 # Dictionaries
-#RUN git clone --depth 1 https://github.com/google/fuzzing && \
-COPY pkgs/fuzzing.tar.gz $SRC/
-RUN tar -xzf $SRC/fuzzing.tar.gz && rm $SRC/fuzzing.tar.gz && \
-    mv fuzzing/dictionaries/zip.dict $SRC/CompressZipFuzzer.dict && \
+RUN git clone --depth 1 https://github.com/google/fuzzing
+RUN mv fuzzing/dictionaries/zip.dict $SRC/CompressZipFuzzer.dict && \
     mv fuzzing/dictionaries/bz2.dict $SRC/CompressorBZip2Fuzzer.dict && \
     rm -rf fuzzing
 
 # Seed corpus (go-fuzz-corpus)
-#RUN git clone --depth 1 https://github.com/dvyukov/go-fuzz-corpus && \
-COPY pkgs/go-fuzz-corpus.tar.gz $SRC/
-RUN tar -xzf $SRC/go-fuzz-corpus.tar.gz && rm $SRC/go-fuzz-corpus.tar.gz && \
-    zip -j0 $SRC/CompressTarFuzzer_seed_corpus.zip go-fuzz-corpus/tar/corpus/* && \
+RUN git clone --depth 1 https://github.com/dvyukov/go-fuzz-corpus
+RUN zip -j0 $SRC/CompressTarFuzzer_seed_corpus.zip go-fuzz-corpus/tar/corpus/* && \
     zip -j0 $SRC/CompressZipFuzzer_seed_corpus.zip go-fuzz-corpus/zip/corpus/* && \
     zip -j0 $SRC/CompressorBZip2Fuzzer_seed_corpus.zip go-fuzz-corpus/bzip2/corpus/* && \
     zip -j0 $SRC/CompressorGzipFuzzer_seed_corpus.zip go-fuzz-corpus/gzip/corpus/* && \
@@ -45,9 +40,7 @@ RUN tar -xzf $SRC/go-fuzz-corpus.tar.gz && rm $SRC/go-fuzz-corpus.tar.gz && \
     rm -rf go-fuzz-corpus
 
 # Checkout out Compress source code
-#RUN git clone --depth 1 https://gitbox.apache.org/repos/asf/commons-compress.git
-COPY pkgs/commons-compress.tar.gz $SRC/
-RUN tar -xzf $SRC/commons-compress.tar.gz && rm $SRC/commons-compress.tar.gz
+RUN git clone --depth 1 https://gitbox.apache.org/repos/asf/commons-compress.git
 
 # Seed corpus (Compress source code)
 RUN \
