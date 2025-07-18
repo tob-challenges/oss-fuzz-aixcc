@@ -1,2 +1,0 @@
-aixcc-challenges/libpng@0cc367aaeaac3f888f255cee5d394968996f736e
-madler/zlib@5a82f71ed1dfc0bec044d9702463dbdf84ea3b71
