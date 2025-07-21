@@ -26,11 +26,7 @@ RUN curl -L https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.
 
 ENV MVN $SRC/maven/apache-maven-3.9.5/bin/mvn
 
-# RUN git clone --depth 1 https://github.com/apache/zookeeper.git zookeeper
-
-WORKDIR $SRC
-COPY pkgs/zookeeper.tar.gz $SRC/zookeeper.tar.gz
-RUN tar -zxf $SRC/zookeeper.tar.gz && rm $SRC/zookeeper.tar.gz
+RUN git clone --depth 1 https://github.com/apache/zookeeper.git zookeeper
 
 COPY build.sh $SRC/
 COPY logback.xml $SRC/
