@@ -28,21 +28,15 @@ RUN set -eux \
 RUN mkdir /usr/my-bin && mv /usr/bin/tesseract /usr/my-bin/tesseract
 RUN mkdir /exif && cp /usr/bin/exiftool /exif && chmod -R a+rwx /exif
 
-#RUN curl -L https://archive.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip -o maven.zip && \
-#    unzip maven.zip -d $SRC/maven && \
-#    rm -rf maven.zip
-
-COPY pkgs/maven.zip $SRC/maven.zip
-RUN unzip $SRC/maven.zip -d $SRC/maven && rm $SRC/maven.zip
+RUN curl -L https://archive.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip -o maven.zip && \
+    unzip maven.zip -d $SRC/maven && \
+    rm -rf maven.zip
 
 ENV MVN=$SRC/maven/apache-maven-3.9.9/bin/mvn
 
 COPY project-parent $SRC/project-parent/
 
-#RUN git clone --depth 1 https://github.com/apache/tika/ $SRC/project-parent/tika
-
-COPY pkgs/tika.tar.gz $SRC/tika.tar.gz
-RUN tar -zxf $SRC/tika.tar.gz -C $SRC/project-parent && rm $SRC/tika.tar.gz
+RUN git clone --depth 1 https://github.com/apache/tika/ $SRC/project-parent/tika
 
 COPY build.sh $SRC/
 WORKDIR $SRC/project-parent/tika
