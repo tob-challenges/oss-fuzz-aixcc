@@ -21,11 +21,7 @@ FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 RUN apt-get update && apt-get install -y devscripts equivs \
 	build-essential git-core cmake ninja-build pkg-config ccache
 
-#RUN git clone --depth 1 https://github.com/FreeRDP/FreeRDP.git
-
-WORKDIR $SRC
-COPY pkgs/FreeRDP.tar.gz $SRC/FreeRDP.tar.gz
-RUN tar -zxf $SRC/FreeRDP.tar.gz && rm $SRC/FreeRDP.tar.gz
+RUN git clone --depth 1 https://github.com/FreeRDP/FreeRDP.git
 
 WORKDIR FreeRDP
 
