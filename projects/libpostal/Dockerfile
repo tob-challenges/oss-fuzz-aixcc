@@ -17,9 +17,7 @@
 FROM ghcr.io/aixcc-finals/base-builder:v1.2.1
 
 RUN apt-get update && apt-get install -y curl autoconf automake libtool pkg-config
-#RUN git clone --depth 1 https://github.com/openvenues/libpostal
-COPY pkgs/libpostal.tar.gz $SRC/libpostal.tar.gz
-RUN tar -zxf $SRC/libpostal.tar.gz && rm $SRC/libpostal.tar.gz
+RUN git clone --depth 1 https://github.com/openvenues/libpostal
 
 WORKDIR $SRC/libpostal
 COPY build.sh *.cc $SRC/
