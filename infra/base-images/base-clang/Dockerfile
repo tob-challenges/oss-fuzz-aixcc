@@ -17,9 +17,10 @@
 # Docker image with clang installed.
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-image:${IMG_TAG}
+FROM ghcr.io/tob-challenges/base-image:${IMG_TAG}
 
-ARG arch=x86_64
+#ARG arch=x86_64
+ARG arch=aarch64
 
 ENV FUZZINTRO_OUTDIR=$SRC
 
