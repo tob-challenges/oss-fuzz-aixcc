@@ -25,6 +25,8 @@ unset CXXFLAGS CFLAGS
 # Ref: https://github.com/google/oss-fuzz/pull/12838#issue-2733821058
 export USE_BAZEL_VERSION=7.4.0
 echo 'build --cxxopt=-stdlib=libc++ --linkopt=-lc++' >> /tmp/centipede.bazelrc
+# Replace this line so it compiles on aarch64
+sed -i 's/build --copt=-mcrc32/build --copt=-march=armv8-a+crc/' ../.bazelrc
 bazel --bazelrc=/tmp/centipede.bazelrc build -c opt :all
 unset USE_BAZEL_VERSION
 
