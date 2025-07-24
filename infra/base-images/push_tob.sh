@@ -8,8 +8,10 @@ push() {
     tag="$2"
     docker tag "${image}" "${image}:${tag}"
     docker push "${image}:${tag}"
+    docker push "${image}:latest"
 }
 
 version="v1.2.0"
 push ghcr.io/tob-challenges/base-image "${version}"
 push ghcr.io/tob-challenges/base-clang "${version}"
+push ghcr.io/tob-challenges/base-builder "${version}"

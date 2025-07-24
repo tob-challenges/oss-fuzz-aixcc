@@ -16,8 +16,9 @@
 ################################################################################
 
 docker build --pull -t ghcr.io/tob-challenges/base-image "$@" infra/base-images/base-image
-docker build -t ghcr.io/tob-challenges/base-clang "$@" infra/base-images/base-clang
-#   docker build -t ghcr.io/tob-challenges/base-builder "$@" infra/base-images/base-builder
+docker build --pull -t ghcr.io/tob-challenges/base-clang "$@" infra/base-images/base-clang
+docker build --pull -t ghcr.io/tob-challenges/base-builder "$@" infra/base-images/base-builder
+
 #   docker build -t ghcr.io/tob-challenges/base-builder-go "$@" infra/base-images/base-builder-go
 #   docker build -t ghcr.io/tob-challenges/base-builder-jvm "$@" infra/base-images/base-builder-jvm
 #   docker build -t ghcr.io/tob-challenges/base-builder-python "$@" infra/base-images/base-builder-python

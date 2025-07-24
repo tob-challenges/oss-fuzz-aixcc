@@ -15,7 +15,7 @@
 ################################################################################
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-clang:${IMG_TAG}
+FROM ghcr.io/tob-challenges/base-clang:${IMG_TAG}
 
 COPY install_deps.sh /
 RUN /install_deps.sh && rm /install_deps.sh
@@ -66,7 +66,8 @@ RUN unset CFLAGS CXXFLAGS && pip3 install -v --no-cache-dir \
 
 # Install Bazel through Bazelisk, which automatically fetches the latest Bazel version.
 ENV BAZELISK_VERSION 1.9.0
-RUN curl -L https://github.com/bazelbuild/bazelisk/releases/download/v$BAZELISK_VERSION/bazelisk-linux-amd64 -o /usr/local/bin/bazel && \
+#RUN curl -L https://github.com/bazelbuild/bazelisk/releases/download/v$BAZELISK_VERSION/bazelisk-linux-amd64 -o /usr/local/bin/bazel && \
+RUN curl -L https://github.com/bazelbuild/bazelisk/releases/download/v$BAZELISK_VERSION/bazelisk-linux-arm64 -o /usr/local/bin/bazel && \
     chmod +x /usr/local/bin/bazel
 
 # Default build flags for various sanitizers.
@@ -105,7 +106,8 @@ ENV COVERAGE_FLAGS_coverage "-fprofile-instr-generate -fcoverage-mapping -pthrea
 # Default sanitizer, fuzzing engine and architecture to use.
 ENV SANITIZER="address"
 ENV FUZZING_ENGINE="libfuzzer"
-ENV ARCHITECTURE="x86_64"
+#ENV ARCHITECTURE="x86_64"
+ENV ARCHITECTURE="aarch64"
 
 # DEPRECATED - NEW CODE SHOULD NOT USE THIS. OLD CODE SHOULD STOP. Please use
 # LIB_FUZZING_ENGINE instead.
