@@ -19,7 +19,7 @@ UNAME_OUTPUT="$(uname -m)"
 if [[ "${UNAME_OUTPUT}" == "x86_64" ]] ; then
     ARCH_NAME="x64"
 elif [[ "${UNAME_OUTPUT}" == "aarch64" ]] ; then
-    ARCH_NAME="arch64"
+    ARCH_NAME="aarch64"
 else
     echo "Unknown architecture: ${UNAME_OUTPUT}"
     exit 1
