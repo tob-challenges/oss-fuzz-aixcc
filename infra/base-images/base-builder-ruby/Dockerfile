@@ -15,7 +15,7 @@
 ################################################################################
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-builder:${IMG_TAG}
+FROM ghcr.io/tob-challenges/base-builder:${IMG_TAG}
 
 RUN git clone https://github.com/trailofbits/ruzzy.git $SRC/ruzzy
 
