@@ -27,6 +27,8 @@ export USE_BAZEL_VERSION=7.4.0
 echo 'build --cxxopt=-stdlib=libc++ --linkopt=-lc++' >> /tmp/centipede.bazelrc
 # Replace this line so it compiles on aarch64
 sed -i 's/build --copt=-mcrc32/build --copt=-march=armv8-a+crc/' ../.bazelrc
+# Change the linker used by the util target to fix the OpenSSL reloc issues on ARM64
+sed -i 's/-Wl,-Bstatic -lcrypto -Wl,-Bdynamic -ldl/-fuse-ld=gold -Wl,-Bstatic -lcrypto -Wl,-Bdynamic -ldl/g' "$SRC/fuzztest/centipede/BUILD"
 bazel --bazelrc=/tmp/centipede.bazelrc build -c opt :all
 unset USE_BAZEL_VERSION
 
