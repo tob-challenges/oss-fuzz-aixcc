@@ -15,7 +15,7 @@
 ################################################################################
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-builder:${IMG_TAG}
+FROM ghcr.io/tob-challenges/base-builder:${IMG_TAG}
 
 # Set up Golang environment variables (copied from /root/.bash_profile).
 ENV GOPATH /root/go
