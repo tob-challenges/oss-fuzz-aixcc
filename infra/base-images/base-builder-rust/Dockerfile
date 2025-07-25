@@ -15,7 +15,7 @@
 ################################################################################
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-builder:${IMG_TAG}
+FROM ghcr.io/tob-challenges/base-builder:${IMG_TAG}
 
 ENV CARGO_HOME=/rust
 ENV RUSTUP_HOME=/rust/rustup
@@ -33,5 +33,6 @@ ENV RUSTUP_TOOLCHAIN nightly-2024-07-12
 # rustc's default of `cc` which is able to find custom-built libraries like
 # `libc++` by default more easily.
 ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER clang
+ENV CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER clang
 
 RUN install_rust.sh
