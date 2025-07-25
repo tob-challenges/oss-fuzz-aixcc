@@ -15,7 +15,7 @@
 ################################################################################
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-builder:${IMG_TAG} AS base
+FROM ghcr.io/tob-challenges/base-builder:${IMG_TAG} AS base
 
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 ENV JAVA_15_HOME /usr/lib/jvm/java-15-openjdk-amd64
@@ -44,6 +44,11 @@ WORKDIR $SRC/jazzer
 RUN echo "build --java_runtime_version=local_jdk_17" >> .bazelrc \
     && echo "build --cxxopt=-stdlib=libc++" >> .bazelrc \
     && echo "build --linkopt=-lc++" >> .bazelrc
+
+RUN if [ "$(uname -m)" = "aarch64" ] ; then \
+      sed -i '/common:linux --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1/d' .bazelrc ; \
+      sed -i '/common:linux --extra_toolchains=@llvm_toolchain\/\/:cc-toolchain-x86_64-linux/d' .bazelrc ; \
+    fi
 
 RUN bazel build \
     //src/main/java/com/code_intelligence/jazzer:jazzer_standalone_deploy.jar \
