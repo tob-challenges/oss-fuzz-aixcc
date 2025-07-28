@@ -23,7 +23,7 @@ docker build --pull -t ghcr.io/tob-challenges/base-builder-jvm "$@" infra/base-i
 docker build --pull -t ghcr.io/tob-challenges/base-builder-python "$@" infra/base-images/base-builder-python
 docker build --pull -t ghcr.io/tob-challenges/base-builder-rust "$@" infra/base-images/base-builder-rust
 docker build --pull -t ghcr.io/tob-challenges/base-builder-ruby "$@" infra/base-images/base-builder-ruby
+docker build --pull -t ghcr.io/tob-challenges/base-builder-swift "$@" infra/base-images/base-builder-swift
 
-#   docker build -t ghcr.io/tob-challenges/base-builder-swift "$@" infra/base-images/base-builder-swift
 #   docker build -t ghcr.io/tob-challenges/base-runner "$@" infra/base-images/base-runner
 #   docker build -t ghcr.io/tob-challenges/base-runner-debug "$@" infra/base-images/base-runner-debug

@@ -32,16 +32,33 @@ SWIFT_PACKAGES="wget \
           pkg-config \
           tzdata \
           zlib1g-dev"
-SWIFT_SYMBOLIZER_PACKAGES="build-essential make cmake ninja-build git python3 g++-multilib binutils-dev zlib1g-dev"
+SWIFT_SYMBOLIZER_PACKAGES="build-essential make cmake ninja-build git python3 binutils-dev zlib1g-dev"
+
+UNAME_OUTPUT=$(uname -m)
+if [[ "${UNAME_OUTPUT}" == "aarch64" ]] ; then
+  SWIFT_TARBALL_NAME="swift-5.10.1-RELEASE-amazonlinux2-aarch64"
+  SWIFT_TARBALL_URL="https://download.swift.org/swift-5.10.1-release/amazonlinux2-aarch64/swift-5.10.1-RELEASE/${SWIFT_TARBALL_NAME}.tar.gz"
+
+  LLVM_TARGETS_TO_BUILD="AArch64"
+
+else
+  SWIFT_TARBALL_NAME="swift-5.10.1-RELEASE-ubuntu20.04"
+  SWIFT_TARBALL_URL="https://download.swift.org/swift-5.10.1-release/ubuntu2004/swift-5.10.1-RELEASE/${SWIFT_TARBALL_NAME}.tar.gz"
+
+  SWIFT_SYMBOLIZER_PACKAGES="${SWIFT_SYMBOLIZER_PACKAGES} g++-multilib"
+  LLVM_TARGETS_TO_BUILD="X86"
+fi
+
 apt-get update && apt install -y $SWIFT_PACKAGES && \
   apt install -y $SWIFT_SYMBOLIZER_PACKAGES --no-install-recommends
 
+wget -q "${SWIFT_TARBALL_URL}"
+tar xzf "${SWIFT_TARBALL_NAME}.tar.gz"
 
-wget -q https://download.swift.org/swift-5.10.1-release/ubuntu2004/swift-5.10.1-RELEASE/swift-5.10.1-RELEASE-ubuntu20.04.tar.gz
-tar xzf swift-5.10.1-RELEASE-ubuntu20.04.tar.gz
-cp -r swift-5.10.1-RELEASE-ubuntu20.04/usr/* /usr/
-rm -rf swift-5.10.1-RELEASE-ubuntu20.04.tar.gz swift-5.10.1-RELEASE-ubuntu20.04/
-# TODO: Move to a seperate work dir
+cp -r ${SWIFT_TARBALL_NAME}/usr/* /usr/
+rm -rf ${SWIFT_TARBALL_NAME}.tar.gz ${SWIFT_TARBALL_NAME}/
+
+# TODO: Move to a separate work dir
 git clone https://github.com/llvm/llvm-project.git
 cd llvm-project
 git checkout 63bf228450b8403e0c5e828d276be47ffbcd00d0 # TODO: Keep in sync with base-clang.
@@ -51,7 +68,7 @@ cmake -G "Ninja" \
     -DLIBCXX_ENABLE_STATIC_ABI_LIBRARY=ON \
     -DLIBCXXABI_ENABLE_SHARED=OFF \
     -DCMAKE_BUILD_TYPE=Release \
-    -DLLVM_TARGETS_TO_BUILD=X86 \
+    -DLLVM_TARGETS_TO_BUILD=${LLVM_TARGETS_TO_BUILD} \
     -DCMAKE_C_COMPILER=clang \
     -DCMAKE_CXX_COMPILER=clang++ \
     -DLLVM_BUILD_TESTS=OFF \

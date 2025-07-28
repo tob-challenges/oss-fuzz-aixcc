@@ -13,7 +13,7 @@ index acfb3bd0e..a499ee2e0 100644
 +  /usr/lib/swift_static/linux/libicui18nswift.a
 +  /usr/lib/swift_static/linux/libicuucswift.a
 +  /usr/lib/swift_static/linux/libicudataswift.a
-+  /usr/lib/x86_64-linux-gnu/libstdc++.so.6
++  /usr/lib/${CMAKE_SYSTEM_PROCESSOR}-linux-gnu/libstdc++.so.6
 +)
 diff --git a/llvm/lib/DebugInfo/Symbolize/Symbolize.cpp b/llvm/lib/DebugInfo/Symbolize/Symbolize.cpp
 index fb4875f79..0030769ee 100644
