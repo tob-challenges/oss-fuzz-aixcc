@@ -17,6 +17,7 @@ IMAGE_NAME_LIST=(
   "base-builder-ruby"
   "base-builder-swift"
   "base-runner"
+  "base-runner-debug"
 )
 
 main() {

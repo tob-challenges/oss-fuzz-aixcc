@@ -15,7 +15,7 @@
 ################################################################################
 
 ARG IMG_TAG=latest
-FROM ghcr.io/aixcc-finals/base-runner:${IMG_TAG}
+FROM ghcr.io/tob-challenges/base-runner:${IMG_TAG}
 RUN apt-get update && apt-get install -y valgrind zip
 
 # Installing GDB 12, re https://github.com/google/oss-fuzz/issues/7513.
