@@ -4,6 +4,7 @@ REGISTRY_URL="ghcr.io/tob-challenges"
 BASE_IMAGES_PATH="infra/base-images"
 
 IMAGE_VERSION="v1.2.0"
+PUSH_IMAGES=1
 
 IMAGE_NAME_LIST=(
   "base-image"
@@ -29,10 +30,12 @@ main() {
       return 1
     fi
 
-    echo -e "\n#\n# Pushing: ${image}\n#\n"
+    if [[ ${PUSH_IMAGES} == 1 ]] ; then
+      echo -e "\n#\n# Pushing: ${image}\n#\n"
 
-    if ! docker_push "${REGISTRY_URL}/${image}" "${IMAGE_VERSION}" ; then
-      return 1
+      if ! docker_push "${REGISTRY_URL}/${image}" "${IMAGE_VERSION}" ; then
+        return 1
+      fi
     fi
 
     echo -e "\n====\n"
