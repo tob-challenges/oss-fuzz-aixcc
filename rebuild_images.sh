@@ -16,6 +16,7 @@ IMAGE_NAME_LIST=(
   "base-builder-rust"
   "base-builder-ruby"
   "base-builder-swift"
+  "base-runner"
 )
 
 main() {
